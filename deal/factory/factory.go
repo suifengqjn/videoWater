@@ -185,7 +185,9 @@ func deal(f string, con *config.Config)string  {
 			return f
 		}
 
-		f = info.MergeVideoHeader(fCmd, con.FilmTitle.Path,f)
+		newHeader := ffmpeg.UpdateResolution(fCmd, con.FilmTitle.Path, info.W, info.H)
+
+		f = info.MergeVideoHeader(fCmd, newHeader,f)
 	}
 	//10. film end
 	if con.FilmEnd.Switch {
@@ -193,7 +195,8 @@ func deal(f string, con *config.Config)string  {
 		if err != nil {
 			return f
 		}
-		f = info.MergeVideoFooter(fCmd, con.FilmEnd.Path,f)
+		newFooter := ffmpeg.UpdateResolution(fCmd, con.FilmEnd.Path, info.W, info.H)
+		f = info.MergeVideoFooter(fCmd, newFooter,f)
 	}
 
 	return f
