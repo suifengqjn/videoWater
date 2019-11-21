@@ -13,4 +13,5 @@
 
 .idea
 video
+build
 *.ts
