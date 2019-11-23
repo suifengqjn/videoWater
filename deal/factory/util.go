@@ -1,6 +1,7 @@
 package factory
 
 import (
+	"fmt"
 	"myTool/sys"
 	"strconv"
 	"strings"
@@ -14,9 +15,14 @@ func GetFCmd(system int) string {
 	}
 	if system == sys.MacOS {
 		return "./source/mac/ffmpeg"
-	} else {
-		return "./source/win/ffmpeg"
+	} else if system == sys.Win64{
+		return "./source/win/64/ffmpeg.exe"
+	} else if system == sys.Win32 {
+		return "./source/win/32/ffmpeg.exe"
 	}
+
+	fmt.Println("系统类型无法识别，请在配置中指定：1:mac 3: win32  4:win64")
+	return ""
 
 }
 
