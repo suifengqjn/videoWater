@@ -33,12 +33,12 @@
 
 解压文件夹后
 
-mac 运行
+**mac 运行**
 cd mac  进入到mac 文件夹下
 ./vm
 
 
-windows 运行
+**windows 运行**
 双击vm.exe 文件即可
 
 
@@ -92,9 +92,11 @@ windows 运行
 ## 其他说明
 
 自媒体创作者可以加我微信，备注自媒体，拉你进交流群。
+
 里面会分享各种软件，视频批量下载，文章自动发布等等。
+
 我们的目标是实现睡后收入
 
-![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpg?raw=true)
+![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpeg?raw=true)
  
 
