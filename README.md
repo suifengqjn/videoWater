@@ -29,7 +29,7 @@
 ## 程序使用
 下载 release 对应系统的包
 打开 config.toml 文件，修改配置，每一项都有一个开关，选择自己需要操作的选项。
-将需要处理的视频全部放入video文件夹，然后运行
+将需要处理的视频全部放入video文件夹(支持多目录)，然后运行
 
 解压文件夹后
 
@@ -87,7 +87,7 @@ cd mac  进入到mac 文件夹下
 ## 打包程序下载
 
 目前支持mac win32 win64
-链接:https://pan.baidu.com/s/1TR_DSgMrZYAOHLsO1GsMTw  密码:9kvg
+链接:https://pan.baidu.com/s/1ZMHF3sPAZty1mkOFtQCgzQ  密码:6exc
 
 ## 其他说明
 
