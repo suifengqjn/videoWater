@@ -131,6 +131,11 @@ func deal(f string, con *config.Config)string  {
 		f = info.CutBack(fCmd,f,con.CutBack.Value)
 	}
 
+	// 6. crop
+	if con.Crop.Switch {
+		f = ffmpeg.CropVideo(fCmd,f,con.Crop.Start,con.Crop.Duration,con.Crop.X,con.Crop.Y,con.Crop.W,con.Crop.H)
+	}
+
 	// 6. clear water
 	if con.ClearWater.Switch {
 		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)

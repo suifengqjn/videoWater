@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"myProject/videoWater/deal/config"
@@ -9,18 +10,21 @@ import (
 	"net/http"
 	"time"
 )
-
+var conFile = flag.String("f", "", "config file")
 func main() {
 	Run()
 }
 
 func Run()  {
 
+	flag.Parse()
+
 	if !check() {
 		return
 	}
 
-	con := config.ReadConfig()
+
+	con := config.ReadConfig(*conFile)
 	fmt.Println(con)
 
 	factory.DoFactory(con)

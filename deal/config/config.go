@@ -16,6 +16,7 @@ type Config struct {
 	BitRate BitRate
 	CutFront CutFront	`toml:"cutFront"`
 	CutBack CutBack	`toml:"cutBack"`
+	Crop   Crop
 	ClearWater ClearWater
 	Resolution Resolution
 	WaterText WaterText
@@ -49,6 +50,16 @@ type CutFront struct {
 type CutBack struct {
 	Switch bool
 	Value int
+}
+
+type Crop struct {
+	Switch bool
+	Start int64
+	Duration int64
+	X int
+	Y int
+	W int
+	H int
 }
 
 type ClearWater struct {
@@ -102,11 +113,7 @@ type FilmEnd struct {
 
 
 
-func init() {
-	ReadConfig()
-}
-
-func ReadConfig() *Config  {
+func ReadConfig(file string) *Config  {
 	if VideoWaterCon != nil {
 		return VideoWaterCon
 	}
@@ -114,9 +121,12 @@ func ReadConfig() *Config  {
 	cur, _ := os.Getwd()
 	fmt.Println("工程路径：", cur)
 
-	con_path := filepath.Join(cur, "config.toml")
+	conPath := filepath.Join(cur, "config.toml")
 
-	_, err := toml.DecodeFile(con_path, &VideoWaterCon)
+	if file == "" {
+		file = conPath
+	}
+	_, err := toml.DecodeFile(file, &VideoWaterCon)
 	if err != nil {
 		panic(err)
 	}

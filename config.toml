@@ -1,15 +1,6 @@
 
-#* [x] [1. 视频格式转换]
-#* [x] [2. 帧率设置]
-#* [x] [3. 比特率设置]
-#* [x] [4. 减掉视频前几秒]
-#* [x] [5. 减掉视频最后几秒]
-#* [x] [6. 去除水印]
-#* [x] [7. 调整视频分辨率]
-#* [x] [8. 添加文字水印]
-#* [x] [9. 添加图片水印]
-#* [x] [10. 添加片头]
-#* [x] [11. 添加片尾]
+
+# x,y, w,h 代表 坐标和宽高
 
 # 视频路径
 videoPath = "./video"
@@ -41,7 +32,19 @@ system = 0
     switch = true
     value = 2
 
-## 6. 去除水印
+# 6. 视频剪裁
+# 如果全部剪裁 start duration 填0
+# start = 5 duration = 10 含义 从第5秒开始，剪裁往后的10秒
+[crop]
+    switch = false
+    start = 5  #从第几秒开始剪裁 （可选）
+    duration = 10 # 剪裁时长（可选）
+    x = 10
+    y = 10
+    w = 100
+    h = 50
+
+## 7. 去除水印
 [clearWater]
     switch = true
     x = 10
@@ -49,12 +52,14 @@ system = 0
     w = 100
     h = 50
 
-## 7. 调整视频分辨率
+
+## 8. 调整视频分辨率
 [resolution]
     switch = false
     w = 1084
     h = 1920
-## 8. 文字水印
+
+## 9. 文字水印
 ## eg: +5 在原来的基础上+5  -5 在原来的基础上-5   20 修改为20
 [waterText]
     switch = true
@@ -68,7 +73,7 @@ system = 0
     sp2 = 100
 
 
-## 9. 图片水印
+## 10. 图片水印
 [waterImage]
     switch = true
     path = "./source/item.jpg"
@@ -76,12 +81,12 @@ system = 0
     sp1 = 50
     sp2 = 100
 
-## 10. 片头
+## 11. 片头
 [filmTitle]
     switch = true
     path = "./source/film.mp4"
 
-## 11. 片尾
+## 12. 片尾
 [filmEnd]
     switch = true
     path = "./source/film.mp4"
