@@ -1,6 +1,8 @@
 
 
 # x,y, w,h 代表 坐标和宽高
+# 注意：每一项操作都在前一项操作的结果上进行
+
 
 # 视频路径
 videoPath = "./video"
@@ -81,12 +83,17 @@ system = 0
     sp1 = 50
     sp2 = 100
 
-## 11. 片头
+# 11. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
+[speed]
+    switch = true
+    v = "2"
+
+## 12. 片头
 [filmTitle]
     switch = true
     path = "./source/film.mp4"
 
-## 12. 片尾
+## 13. 片尾
 [filmEnd]
     switch = true
     path = "./source/film.mp4"

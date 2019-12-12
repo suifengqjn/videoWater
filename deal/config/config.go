@@ -21,6 +21,7 @@ type Config struct {
 	Resolution Resolution
 	WaterText WaterText
 	WaterImage WaterImage
+	Speed Speed
 	FilmTitle FilmTitle
 	FilmEnd FilmEnd
 
@@ -96,6 +97,10 @@ type WaterImage struct {
 	Sp2 int
 }
 
+type Speed struct {
+	Switch bool
+	V string
+}
 
 type FilmTitle struct {
 	Switch bool

@@ -7,6 +7,7 @@ import (
 	"myTool/file"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -183,7 +184,15 @@ func deal(f string, con *config.Config)string  {
 		)
 	}
 
-	//10. film title
+	//10. speed
+	if con.Speed.Switch {
+		v,err := strconv.ParseFloat(con.Speed.V, 10)
+		if err == nil {
+			f = ffmpeg.Speed(fCmd,f,float32(v))
+		}
+
+	}
+	//11. film title
 	if con.FilmTitle.Switch {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
@@ -194,7 +203,7 @@ func deal(f string, con *config.Config)string  {
 
 		f = info.MergeVideoHeader(fCmd, newHeader,f)
 	}
-	//10. film end
+	//12. film end
 	if con.FilmEnd.Switch {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
