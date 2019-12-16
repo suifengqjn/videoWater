@@ -26,12 +26,11 @@ func DoFactory(con *config.Config)  {
 	var delDirs []string
 	for _, f := range files {
 
-		fmt.Println("当前处理", f)
 		if ffmpeg.IsVideo(f) == false {
 			continue
 		}
 
-
+		fmt.Println("当前处理", f)
 
 		dir := filepath.Dir(f)
 		result := filepath.Join(dir,"result")
