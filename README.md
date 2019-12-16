@@ -1,5 +1,7 @@
 # videoWater
 
+[针对小白的使用教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
+
 由于常常在网上搜集视频，然后将视频进行一系列的处理，然后发布到头条等自媒体，
 视频处理往往要花大量的时间，现在写了个程序，可以将视频进行批量处理。
 
