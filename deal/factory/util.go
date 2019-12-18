@@ -14,11 +14,11 @@ func GetFCmd(system int) string {
 		system = info.PlatForm
 	}
 	if system == sys.MacOS {
-		return "./source/mac/ffmpeg"
+		return "./source/mac/tool"
 	} else if system == sys.Win64{
-		return "./source/win/64/ffmpeg.exe"
+		return "./source/win/64/tool.exe"
 	} else if system == sys.Win32 {
-		return "./source/win/32/ffmpeg.exe"
+		return "./source/win/32/tool.exe"
 	}
 
 	fmt.Println("系统类型无法识别，请在配置中指定：1:mac 3: win32  4:win64")

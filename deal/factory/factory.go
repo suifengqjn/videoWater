@@ -136,17 +136,17 @@ func deal(f string, con *config.Config)string  {
 		f = ffmpeg.CropVideo(fCmd,f,con.Crop.Start,con.Crop.Duration,con.Crop.X,con.Crop.Y,con.Crop.W,con.Crop.H)
 	}
 
-	// 6. clear water
+	// 7. clear water
 	if con.ClearWater.Switch {
 		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)
 	}
 
-	//7. Resolution
+	//8. Resolution
 	if con.Resolution.Switch {
 		f = ffmpeg.UpdateResolution(fCmd, f, con.Resolution.W, con.Resolution.H)
 	}
 
-	//8. water text
+	//9. water text
 	if con.WaterText.Switch {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
@@ -166,7 +166,25 @@ func deal(f string, con *config.Config)string  {
 		)
 	}
 
-	//9. water image
+	// 9.1 runtext
+	if con.RunWaterText.Switch {
+		info, err := ffmpeg.GetVideoInfo(fCmd, f)
+		if err != nil {
+			return f
+		}
+		f = info.AddScrollTextWater(
+			fCmd,
+			f,
+			con.RunWaterText.Path,
+			con.RunWaterText.Content,
+			con.RunWaterText.Color,
+			con.RunWaterText.Size,
+			con.RunWaterText.IsTop,
+			con.RunWaterText.LeftToRight,
+			con.RunWaterText.Sp,
+			)
+	}
+	//10. water image
 	if con.WaterImage.Switch {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {

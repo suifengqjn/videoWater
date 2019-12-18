@@ -9,29 +9,29 @@ videoPath = "./video"
 system = 0
 ## 1. 视频格式转换
 [format]
-    switch = true
+    switch = false
     form = "mp4"
 
 ## 2. 帧率设置
 ## eg: +5 在原来的基础上+5  -5 在原来的基础上-5   20 修改为20
 [frameRate]
-    switch = true
+    switch = false
     value = "+5"
 
 ## 3. 码率设置
 ## eg: +5 在原来的基础上+5  -5 在原来的基础上-5   20 修改为20
 [bitRate]
-    switch = true
+    switch = false
     value = "+5"
 
 ## 4. 减掉视频前几秒
 [cutFront]
-    switch = true
+    switch = false
     value = 2
 
 ## 5. 减掉视频最后几秒
 [cutBack]
-    switch = true
+    switch = false
     value = 2
 
 # 6. 视频剪裁
@@ -48,7 +48,7 @@ system = 0
 
 ## 7. 去除水印
 [clearWater]
-    switch = true
+    switch = false
     x = 10
     y = 10
     w = 100
@@ -62,7 +62,6 @@ system = 0
     h = 1920
 
 ## 9. 文字水印
-## eg: +5 在原来的基础上+5  -5 在原来的基础上-5   20 修改为20
 [waterText]
     switch = true
     content = "测试文字"
@@ -70,14 +69,27 @@ system = 0
     size = 50
     color = "black"
     alpha = 0.8
-    style = 1
+    style = 8
     sp1 = 50
     sp2 = 100
+
+## 9.1 滚动文字
+# isTop 顶部还是底部 sp 距离顶部或者底部的距离
+# leftToRight 是否从坐到右
+[runWaterText]
+    switch = false
+    content = "测试文字"
+    path = "./source/simsun.ttc"
+    size = 50
+    color = "black"
+    isTop = true
+    leftToRight = true
+    sp = 50
 
 
 ## 10. 图片水印
 [waterImage]
-    switch = true
+    switch = false
     path = "./source/item.jpg"
     style = 2
     sp1 = 50
@@ -85,16 +97,16 @@ system = 0
 
 # 11. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
 [speed]
-    switch = true
+    switch = false
     v = "2"
 
 ## 12. 片头
 [filmTitle]
-    switch = true
+    switch = false
     path = "./source/film.mp4"
 
 ## 13. 片尾
 [filmEnd]
-    switch = true
+    switch = false
     path = "./source/film.mp4"
 

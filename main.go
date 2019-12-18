@@ -11,6 +11,7 @@ import (
 	"time"
 )
 var conFile = flag.String("f", "", "config file")
+var videoPath = flag.String("v", "", "config file")
 func main() {
 	Run()
 }
@@ -23,9 +24,13 @@ func Run()  {
 		return
 	}
 
-
 	con := config.ReadConfig(*conFile)
 	fmt.Println(con)
+
+	if len(*videoPath) > 0 {
+		con.VideoPath = *videoPath
+		fmt.Println(*videoPath)
+	}
 
 	factory.DoFactory(con)
 
@@ -84,7 +89,8 @@ type Message struct {
 func check() bool  {
 
 	url := "https://api.github.com/repos/suifengqjn/videoWater/issues"
-	resp, err := http.Get(url)
+	client := http.Client{Timeout:time.Second*20}
+	resp, err := client.Get(url)
 	if err != nil {
 		fmt.Println("请检查网络")
 		return false

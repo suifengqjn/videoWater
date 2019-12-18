@@ -20,6 +20,7 @@ type Config struct {
 	ClearWater ClearWater
 	Resolution Resolution
 	WaterText WaterText
+	RunWaterText RunWaterText `toml:"RunWaterText"`
 	WaterImage WaterImage
 	Speed Speed
 	FilmTitle FilmTitle
@@ -87,6 +88,17 @@ type WaterText struct {
 	Style int
 	Sp1 int
 	Sp2 int
+}
+
+type RunWaterText struct {
+	Switch  bool
+	Content string
+	Path    string
+	Size    int
+	Color   string
+	IsTop   bool `toml:"isTop"`
+	LeftToRight   bool `toml:"leftToRight"`
+	Sp      int
 }
 
 type WaterImage struct {
