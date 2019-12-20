@@ -53,7 +53,6 @@ func DoFactory(con *config.Config)  {
 
 		to := result + "/" + filepath.Base(f)
 
-		fmt.Println("from",f, "to", to)
 		_ = file.MoveFile(f, to)
 
 		fmt.Println("处理结束", f)

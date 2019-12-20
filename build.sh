@@ -11,6 +11,10 @@ rm -f ./win32.zip
 rm -f ./win64.zip
 rm -f ./mac.zip
 
+cp ./config.toml ./build/win32/
+cp ./config.toml ./build/win64/
+cp ./config.toml ./build/mac/
+
 zip -q -r win32.zip ./build/win32
 zip -q -r win64.zip ./build/win64
 zip -q -r mac.zip ./build/mac

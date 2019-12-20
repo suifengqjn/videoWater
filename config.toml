@@ -27,24 +27,24 @@ system = 0
 ## 4. 减掉视频前几秒
 [cutFront]
     switch = false
-    value = 2
+    value = 6
 
 ## 5. 减掉视频最后几秒
 [cutBack]
     switch = false
-    value = 2
+    value = 4
 
 # 6. 视频剪裁
 # 如果全部剪裁 start duration 填0
 # start = 5 duration = 10 含义 从第5秒开始，剪裁往后的10秒
 [crop]
     switch = false
-    start = 5  #从第几秒开始剪裁 （可选）
-    duration = 10 # 剪裁时长（可选）
-    x = 10
-    y = 10
-    w = 100
-    h = 50
+    start = 0  #从第几秒开始剪裁 （可选）
+    duration = 0 # 剪裁时长（可选）
+    x = 320
+    y = 1
+    w = 300
+    h = 534
 
 ## 7. 去除水印
 [clearWater]
@@ -58,18 +58,18 @@ system = 0
 ## 8. 调整视频分辨率
 [resolution]
     switch = false
-    w = 1084
-    h = 1920
+    w = 576
+    h = 1024
 
 ## 9. 文字水印
 [waterText]
     switch = true
-    content = "测试文字"
+    content = "文字logo"
     path = "./source/simsun.ttc"
     size = 50
-    color = "black"
+    color = "red"
     alpha = 0.8
-    style = 8
+    style = 1
     sp1 = 50
     sp2 = 100
 
@@ -81,7 +81,7 @@ system = 0
     content = "测试文字"
     path = "./source/simsun.ttc"
     size = 50
-    color = "black"
+    color = "red"
     isTop = true
     leftToRight = true
     sp = 50
@@ -89,9 +89,9 @@ system = 0
 
 ## 10. 图片水印
 [waterImage]
-    switch = false
-    path = "./source/item.jpg"
-    style = 2
+    switch = true
+    path = "./source/item.png"
+    style = 3
     sp1 = 50
     sp2 = 100
 
@@ -100,13 +100,13 @@ system = 0
     switch = false
     v = "2"
 
-## 12. 片头
+## 12. 片头 576 1024
 [filmTitle]
-    switch = false
-    path = "./source/film.mp4"
+    switch = true
+    path = "./source/head.mp4"
 
 ## 13. 片尾
 [filmEnd]
-    switch = false
-    path = "./source/film.mp4"
+    switch = true
+    path = "./source/foot.mp4"
 

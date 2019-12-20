@@ -1,6 +1,10 @@
 # videoWater
 
-[针对小白的使用教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
+[快速入门视频教程](https://pan.baidu.com/s/1UnxcLYXOKnOZbMKcguOCig)
+
+[详细版视频教程](https://v.youku.com/v_show/id_XNDQ3NDkwNTY1Ng==.html)
+
+[针对小白的使用文档教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
 
 由于常常在网上搜集视频，然后将视频进行一系列的处理，然后发布到头条等自媒体，
 视频处理往往要花大量的时间，现在写了个程序，可以将视频进行批量处理。
@@ -137,12 +141,11 @@ windows `./vm.exe -f config1.toml`
 
 ## 其他说明
 
-自媒体创作者可以加我微信，备注自媒体，拉你进交流群。
+自媒体创作者可以加我微信，备注自媒体，进微信群交流群。
 
-里面会分享各种软件，视频批量下载，文章自动发布等等。
+里面会分享各种软件，视频批量采集，全自动发布等等
 
-今日头条原创视频一万播放20元，当有一定的粉丝后，不奢求日入几千，但是日入几十几百还是没啥问题的，
-但是实现这个小目标的基础就是需要几款批量化软件，我们的目标是实现睡后收入
+我们的目标是软件一开，实现睡后收入
 
 
 ![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpeg?raw=true)
