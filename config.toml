@@ -100,7 +100,7 @@ system = 0
     switch = false
     v = "2"
 
-## 12. 片头 576 1024
+## 12. 片头
 [filmTitle]
     switch = true
     path = "./source/head.mp4"
