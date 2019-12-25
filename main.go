@@ -18,11 +18,12 @@ func main() {
 
 func Run()  {
 
+
 	flag.Parse()
 
-	//if !check() {
-	//	return
-	//}
+	if !check() {
+		return
+	}
 
 	con := config.ReadConfig(*conFile)
 	fmt.Println(con)
