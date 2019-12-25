@@ -14,8 +14,5 @@
 .idea
 video
 build
-deal
 log
-account
-main.go
 *.ts
