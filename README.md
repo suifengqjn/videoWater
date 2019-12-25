@@ -6,6 +6,13 @@
 
 [针对小白的使用文档教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
 
+
+[视频采集器](https://github.com/suifengqjn/videoCollector)
+
+[视频全自动发布器](https://github.com/suifengqjn/mediaBot)
+
+
+
 视频自媒体批量处理软件，秒杀市面上绝大部分收费软件。
 针对视频自媒体运营者，包括原创和伪原创，这一款软件就足够了。
 
