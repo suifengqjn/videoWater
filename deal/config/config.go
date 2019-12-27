@@ -19,6 +19,7 @@ type Config struct {
 	Crop   Crop
 	ClearWater ClearWater
 	Resolution Resolution
+	Compress Compress
 	WaterText WaterText
 	RunWaterText RunWaterText `toml:"RunWaterText"`
 	WaterImage WaterImage
@@ -76,6 +77,12 @@ type Resolution struct {
 	Switch bool
 	W int
 	H int
+}
+
+type Compress struct {
+	Switch bool
+	Preset string
+	Crf int
 }
 
 type WaterText struct {
