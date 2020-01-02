@@ -145,6 +145,9 @@ func deal(f string, con *config.Config)string  {
 		f = ffmpeg.UpdateResolution(fCmd, f, con.Resolution.W, con.Resolution.H)
 	}
 
+	if con.Compress.Switch {
+		f = ffmpeg.Compress(fCmd, f, con.Compress.Preset, con.Compress.Crf)
+	}
 	//9. water text
 	if con.WaterText.Switch {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
