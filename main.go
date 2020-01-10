@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"myProject/videoWater/deal/config"
 	"myProject/videoWater/deal/factory"
 	"net/http"
@@ -18,14 +19,20 @@ func main() {
 
 func Run()  {
 
-
 	flag.Parse()
 
 	if !check() {
+
+		time.Sleep(time.Second * 5)
 		return
 	}
 
 	con := config.ReadConfig(*conFile)
+	if con == nil {
+		log.Println("配置文件有误")
+		time.Sleep(time.Second * 5)
+		return
+	}
 	fmt.Println(con)
 
 	if len(*videoPath) > 0 {
@@ -112,7 +119,7 @@ func check() bool  {
 	}
 	var msg Message
 	for _, d := range res {
-		if d.Title == "1.0" {
+		if d.Title == "2.0" {
 			err = json.Unmarshal([]byte(d.Body), &msg)
 			break
 		}

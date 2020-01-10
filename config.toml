@@ -7,6 +7,15 @@
 # 视频路径
 videoPath = "./video"
 system = 0
+
+## 独立模块
+# 视频分段
+# duration 每一段的时长（单位：秒）
+[cutSection]
+    switch = false
+    duration = 10
+
+
 ## 1. 视频格式转换
 [format]
     switch = false
@@ -46,6 +55,7 @@ system = 0
     w = 300
     h = 534
 
+
 ## 7. 去除水印
 [clearWater]
     switch = false
@@ -54,6 +64,11 @@ system = 0
     w = 100
     h = 50
 
+# 镜像
+# direction  h : 水平方向（左右镜像） v：垂直方向（上下镜像）
+[mirror]
+    switch = false
+    direction = "v"
 
 ## 8. 调整视频分辨率
 [resolution]

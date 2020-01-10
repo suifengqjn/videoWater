@@ -9,6 +9,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var fCmd = ""
@@ -20,7 +21,10 @@ func DoFactory(con *config.Config)  {
 	files, err := file.GetAllFiles(con.VideoPath)
 	if err != nil || len(files) == 0 {
 		fmt.Printf("当前目录：%v 没有文件", con.VideoPath)
+
+		time.Sleep(time.Second * 5)
 	}
+
 
 	_, oriDirs, _ := file.GetCurrentFilesAndDirs(con.VideoPath)
 	var delDirs []string
@@ -138,6 +142,11 @@ func deal(f string, con *config.Config)string  {
 	// 7. clear water
 	if con.ClearWater.Switch {
 		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)
+	}
+
+	//  mirror
+	if con.Mirror.Switch {
+		f = ffmpeg.Mirror(fCmd, f,con.Mirror.Direction)
 	}
 
 	//8. Resolution

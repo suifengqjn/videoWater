@@ -11,6 +11,7 @@ var VideoWaterCon *Config
 type Config struct {
 	VideoPath string `toml:"videoPath"`
 	System int
+	CutSection CutSection
 	Format Format
 	FrameRate FrameRate
 	BitRate BitRate
@@ -18,6 +19,7 @@ type Config struct {
 	CutBack CutBack	`toml:"cutBack"`
 	Crop   Crop
 	ClearWater ClearWater
+	Mirror Mirror
 	Resolution Resolution
 	Compress Compress
 	WaterText WaterText
@@ -27,7 +29,12 @@ type Config struct {
 	FilmTitle FilmTitle
 	FilmEnd FilmEnd
 
+}
 
+
+type CutSection struct {
+	Switch bool
+	Duration int
 }
 
 type Format struct {
@@ -71,6 +78,11 @@ type ClearWater struct {
 	Y int
 	W int
 	H int
+}
+
+type Mirror struct {
+	Switch bool
+	Direction string
 }
 
 type Resolution struct {
@@ -152,7 +164,8 @@ func ReadConfig(file string) *Config  {
 	}
 	_, err := toml.DecodeFile(file, &VideoWaterCon)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return nil
 	}
 
 	fmt.Println("项目配置", *VideoWaterCon)
