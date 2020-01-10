@@ -20,20 +20,16 @@ func main() {
 func Run()  {
 
 	flag.Parse()
-
-	if !check() {
-
-		time.Sleep(time.Second * 5)
-		return
-	}
-
 	con := config.ReadConfig(*conFile)
 	if con == nil {
 		log.Println("配置文件有误")
 		time.Sleep(time.Second * 5)
 		return
 	}
-	fmt.Println(con)
+	if !check() {
+		time.Sleep(time.Second * 5)
+		return
+	}
 
 	if len(*videoPath) > 0 {
 		con.VideoPath = *videoPath
