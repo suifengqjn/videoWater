@@ -2,6 +2,7 @@ package factory
 
 import (
 	"fmt"
+	"myProject/videoWater/account"
 	"myProject/videoWater/deal/config"
 	"myTool/ffmpeg"
 	"myTool/file"
@@ -18,6 +19,15 @@ func DoFactory(con *config.Config)  {
 
 	fCmd = GetFCmd(con.System)
 
+	go DoSection(con)
+
+	go doEdit(con)
+
+}
+
+
+
+func doEdit(con *config.Config) {
 	files, err := file.GetAllFiles(con.VideoPath)
 	if err != nil || len(files) == 0 {
 		fmt.Printf("当前目录：%v 没有文件", con.VideoPath)
@@ -32,6 +42,12 @@ func DoFactory(con *config.Config)  {
 
 		if ffmpeg.IsVideo(f) == false {
 			continue
+		}
+
+		if account.VDAccount.CanUse() == false {
+			fmt.Println("今日免费次数已用完")
+			time.Sleep(time.Second * 30)
+			break
 		}
 
 		fmt.Println("当前处理", f)
@@ -55,11 +71,14 @@ func DoFactory(con *config.Config)  {
 
 		f = deal(f, con)
 
-		to := result + "/" + filepath.Base(f)
+		if account.VDAccount.AccType == account.AccTypeFree {
+			account.VDAccount.AddAction()
+		}
 
+
+		to := result + "/" + filepath.Base(f)
 		_ = file.MoveFile(f, to)
 
-		fmt.Println("处理结束", f)
 		//clean
 
 		_, dirs, _ = file.GetCurrentFilesAndDirs(dir)
@@ -79,8 +98,8 @@ func DoFactory(con *config.Config)  {
 			_ = os.RemoveAll(d)
 		}
 	}
-
 }
+
 
 func deal(f string, con *config.Config)string  {
 	//1 . 格式转换

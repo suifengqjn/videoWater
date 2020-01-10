@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"myProject/videoWater/account"
 	"myProject/videoWater/deal/config"
 	"myProject/videoWater/deal/factory"
 	"net/http"
@@ -30,6 +31,26 @@ func Run()  {
 		time.Sleep(time.Second * 5)
 		return
 	}
+
+	if len(con.AppId) == 0 {
+		fmt.Println("    请购买密钥   ")
+		time.Sleep(time.Second * 500)
+		return
+	}
+
+	acc := account.GetAccount(con.AppId)
+	if acc.AccType < 0 {
+		fmt.Println("    密钥无效，请购买密钥   ")
+		time.Sleep(time.Second * 500)
+		return
+	} else {
+
+		fmt.Println(acc.Msg)
+		fmt.Println(acc.AppId)
+	}
+
+
+
 
 	if len(*videoPath) > 0 {
 		con.VideoPath = *videoPath

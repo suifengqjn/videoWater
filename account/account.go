@@ -13,20 +13,23 @@ const (
 var VDAccount *Account
 
 func GetAccount(appId string) *Account  {
-	VDAccount = GetAccountInfo(appId)
+	VDAccount = getAccountInfo(appId)
 	return VDAccount
 }
 
-func (a *Account)DownloadAction()  {
+
+
+func (a *Account)AddAction()  {
 	if a.AccType ==  AccTypeFree{
 		a.lock.Lock()
 		defer a.lock.Unlock()
-		a.Count --
-		a.Add()
+		err := a.addRequest()
+		if err == nil {
+			a.Count --
+		}
+
 	}
-
 }
-
 func (a *Account)CanUse() bool  {
 	if a.AccType == AccTypeFree {
 		if a.Count <= 0 {

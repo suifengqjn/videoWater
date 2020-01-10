@@ -9,8 +9,10 @@ import (
 
 var VideoWaterCon *Config
 type Config struct {
+	SectionPath string `toml:"SectionPath"`
 	VideoPath string `toml:"videoPath"`
 	System int
+	AppId string `json:"appId"`
 	CutSection CutSection
 	Format Format
 	FrameRate FrameRate
@@ -146,9 +148,6 @@ type FilmEnd struct {
 
 
 
-
-
-
 func ReadConfig(file string) *Config  {
 	if VideoWaterCon != nil {
 		return VideoWaterCon
@@ -168,7 +167,6 @@ func ReadConfig(file string) *Config  {
 		return nil
 	}
 
-	fmt.Println("项目配置", *VideoWaterCon)
 
 	return VideoWaterCon
 

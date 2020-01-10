@@ -7,6 +7,7 @@ import (
 	"myTool/sys"
 	"net/http"
 	"sync"
+	"time"
 )
 
 const remoteHost  = "http://106.12.220.252:8001"
@@ -20,7 +21,7 @@ type Account struct {
 	lock sync.Mutex
 }
 
-func GetAccountInfo(appId string) *Account {
+func getAccountInfo(appId string) *Account {
 	url := remoteHost + "/vd/account_info"
 	method := "POST"
 
@@ -56,7 +57,7 @@ func GetAccountInfo(appId string) *Account {
 	return &acc
 }
 
-func (a *Account)Add() error  {
+func (a *Account)addRequest() error  {
 	url := remoteHost + "/vd/count"
 	method := "POST"
 
@@ -83,4 +84,18 @@ func (a *Account)Add() error  {
 		return nil
 	}
 	return err
+}
+
+func (a *Account)CheckAccountStatus()  {
+
+	go func() {
+
+		ticker := time.NewTicker(time.Hour)
+		for range ticker.C {
+			GetAccount(a.AppId)
+		}
+
+	}()
+
+
 }

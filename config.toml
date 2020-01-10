@@ -8,6 +8,8 @@
 videoPath = "./video"
 system = 0
 
+appId = "78c28538659f36b9c7ea959109f0c096"
+
 ## 独立模块
 # 视频分段
 # duration 每一段的时长（单位：秒）
