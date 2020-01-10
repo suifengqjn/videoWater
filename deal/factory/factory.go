@@ -15,13 +15,14 @@ import (
 
 var fCmd = ""
 
+
 func DoFactory(con *config.Config)  {
 
 	fCmd = GetFCmd(con.System)
 
-	go DoSection(con)
+	DoSection(con)
 
-	go doEdit(con)
+	doEdit(con)
 
 }
 
@@ -71,7 +72,7 @@ func doEdit(con *config.Config) {
 
 		f = deal(f, con)
 
-		if account.VDAccount.AccType == account.AccTypeFree {
+		if account.VDAccount.AccType == account.AccTypeBase {
 			account.VDAccount.AddAction()
 		}
 
@@ -98,6 +99,7 @@ func doEdit(con *config.Config) {
 			_ = os.RemoveAll(d)
 		}
 	}
+
 }
 
 

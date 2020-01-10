@@ -1,7 +1,7 @@
 package account
 
 const (
-	AccTypeFree = iota
+	AccTypeBase = iota
 	AccTypeMonth
 	AccTypeHalfYear
 	AccTypeYear
@@ -20,7 +20,7 @@ func GetAccount(appId string) *Account  {
 
 
 func (a *Account)AddAction()  {
-	if a.AccType ==  AccTypeFree{
+	if a.AccType ==  AccTypeBase{
 		a.lock.Lock()
 		defer a.lock.Unlock()
 		err := a.addRequest()
@@ -31,7 +31,7 @@ func (a *Account)AddAction()  {
 	}
 }
 func (a *Account)CanUse() bool  {
-	if a.AccType == AccTypeFree {
+	if a.AccType == AccTypeBase {
 		if a.Count <= 0 {
 			return false
 		}
@@ -39,3 +39,19 @@ func (a *Account)CanUse() bool  {
 	return true
 }
 
+func (a *Account)TYPE()string  {
+	if a.AccType == AccTypeBase {
+		return "基础版"
+	} else if a.AccType == AccTypeMonth {
+		return "月卡用户"
+	} else if a.AccType == AccTypeHalfYear {
+		return "半年卡用户"
+	} else if a.AccType == AccTypeYear {
+		return "年卡"
+	} else if a.AccType == AccTypeSUPERVIP {
+		return "终身高级VIP用户"
+	} else {
+		return "未知用户"
+	}
+
+}

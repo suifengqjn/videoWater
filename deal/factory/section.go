@@ -15,13 +15,11 @@ func DoSection(con *config.Config)  {
 	}
 
 	files, err := file.GetAllFiles(con.VideoPath)
-	if err != nil {
+	if err != nil || con.CutSection.Switch == false {
+
 		return
 	}
 
-	if con.CutSection.Switch == false {
-		return
-	}
 
 	for _, f := range files {
 
@@ -41,7 +39,7 @@ func DoSection(con *config.Config)  {
 		}
 
 		info.CutSection(fCmd, f, con.CutSection.Duration)
-		if account.VDAccount.AccType == account.AccTypeFree {
+		if account.VDAccount.AccType == account.AccTypeBase {
 			account.VDAccount.AddAction()
 		}
 

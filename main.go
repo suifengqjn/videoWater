@@ -45,11 +45,11 @@ func Run()  {
 		return
 	} else {
 
+		fmt.Printf("账户 ID：%v \n",acc.AppId)
+		fmt.Printf("账户类型：%v \n",acc.TYPE())
+		fmt.Printf("账户有效期：%v \n",acc.Time)
 		fmt.Println(acc.Msg)
-		fmt.Println(acc.AppId)
 	}
-
-
 
 
 	if len(*videoPath) > 0 {
