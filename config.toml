@@ -1,14 +1,20 @@
-
+# **********************************************************************#
+#                                                                       #
+#       密钥购买地址：https://www.kuaifaka.com/purchasing?link=3ZUpQ      #
+#                                                                       #
+# **********************************************************************#
 
 # x,y, w,h 代表 坐标和宽高
 # 注意：每一项操作都在前一项操作的结果上进行
 
+# true ：打开   false 关闭
 
 # 视频路径
 videoPath = "./video"
 system = 0
 
-appId = "85b026d19f6940aa6a58a966346e1abf"
+# 密钥
+appId = "85b026d19f6940aa6a58a966346e1abf1"
 
 ## 独立模块
 # 视频分段
@@ -88,7 +94,7 @@ appId = "85b026d19f6940aa6a58a966346e1abf"
 
 ##压缩,一般 调整 crf 即可
 [compress]
-    switch = true
+    switch = false
     preset = "medium" #（ultrafast，superfast，veryfast，faster，fast，medium，slow，slower，veryslow和placebo）
     crf = 40 # 指定输出视频的质量，取值范围是0-51，默认值为23，数字越小输出视频的质量越高
 
@@ -133,11 +139,11 @@ appId = "85b026d19f6940aa6a58a966346e1abf"
 
 ## 12. 片头
 [filmTitle]
-    switch = false
+    switch = true
     path = "./source/head.mp4"
 
 ## 13. 片尾
 [filmEnd]
-    switch = false
+    switch = true
     path = "./source/foot.mp4"
 

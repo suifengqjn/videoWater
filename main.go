@@ -42,18 +42,17 @@ func Run()  {
 
 	acc := account.GetAccount(con.AppId)
 
-
 	fmt.Println(line)
 	fmt.Println(line)
 	fmt.Println(line)
 	fmt.Println()
 	fmt.Println()
 	if acc.AccType < 0 {
-		fmt.Println(formatline("账户ID:"+acc.AppId))
+		fmt.Println(formatline("账户密钥:"+acc.AppId))
 		fmt.Println(formatline("密钥无效，请购买密钥"))
 		fmt.Println(formatline("vip 购买地址："+"https://www.kuaifaka.com/purchasing?link=3ZUpQ"))
 	} else {
-		fmt.Printf("账户 ID：%v \n",acc.AppId)
+		fmt.Printf("账户 密钥：%v \n",acc.AppId)
 		fmt.Printf("账户类型：%v \n",acc.TYPE())
 		fmt.Printf("%v \n",acc.Time)
 		fmt.Println(acc.Msg)
@@ -65,7 +64,10 @@ func Run()  {
 	fmt.Println(line)
 	fmt.Println(line)
 
-
+	if acc.AccType < 0 {
+		time.Sleep(time.Second * 500)
+		return
+	}
 	//acc.LimitTest()
 	//
 	//
@@ -166,8 +168,6 @@ func check() bool  {
 			break
 		}
 	}
-
-
 
 
 	if len(msg.Msg) > 0 {
