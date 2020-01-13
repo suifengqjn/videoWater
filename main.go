@@ -15,7 +15,7 @@ import (
 )
 var conFile = flag.String("f", "", "config file")
 var videoPath = flag.String("v", "", "config file")
-var line = "************************************************************"
+var line = "********************************************************************************"
 func main() {
 	Run()
 }
@@ -47,10 +47,11 @@ func Run()  {
 	fmt.Println(line)
 	fmt.Println()
 	fmt.Println()
+	fmt.Println(formatline(fmt.Sprintf("伪原创视频批量剪辑器 %v", common.Version)))
 	if acc.AccType < 0 {
 		fmt.Println(formatline("账户密钥:"+acc.AppId))
 		fmt.Println(formatline("密钥无效，请购买密钥"))
-		fmt.Println(formatline("vip 购买地址："+"https://www.kuaifaka.com/purchasing?link=3ZUpQ"))
+		fmt.Println(formatline("密钥购买地址："+"https://www.kuaifaka.com/purchasing?link=3ZUpQ"))
 	} else {
 		fmt.Printf("账户 密钥：%v \n",acc.AppId)
 		fmt.Printf("账户类型：%v \n",acc.TYPE())
