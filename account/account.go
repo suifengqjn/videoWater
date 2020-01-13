@@ -27,7 +27,6 @@ func (a *Account)AddAction()  {
 		if err == nil {
 			a.Count --
 		}
-
 	}
 }
 func (a *Account)CanUse() bool  {

@@ -8,7 +8,7 @@
 videoPath = "./video"
 system = 0
 
-appId = "e7ccc3f5d94c57f873a6aba574f19597"
+appId = "85b026d19f6940aa6a58a966346e1abf"
 
 ## 独立模块
 # 视频分段
@@ -18,6 +18,13 @@ appId = "e7ccc3f5d94c57f873a6aba574f19597"
     switch = false
     duration = 10
 
+# 视频截图
+#  t 表示共要多少时间
+#  r 表示每一秒几帧
+[Snip]
+    switch = false
+    t = 1
+    r = 1
 
 ## 1. 视频格式转换
 [format]

@@ -15,6 +15,7 @@ type Config struct {
 	System int
 	AppId string `json:"appId"`
 	CutSection CutSection
+	Snip Snip
 	Format Format
 	FrameRate FrameRate
 	BitRate BitRate
@@ -39,6 +40,13 @@ type CutSection struct {
 	SectionPath string `toml:"sectionPath"`
 	Switch bool
 	Duration int
+}
+
+
+type Snip struct {
+	Switch bool
+	T int
+	R int
 }
 
 type Format struct {

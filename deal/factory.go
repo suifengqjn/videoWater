@@ -111,6 +111,13 @@ func doEdit(con *common.Config) int {
 
 
 func deal(f string, con *common.Config)string  {
+
+
+	// 0. snip
+	if con.Snip.Switch {
+		ffmpeg.Snip(fCmd, f, strconv.Itoa(con.Snip.T),strconv.Itoa(con.Snip.R))
+	}
+
 	//1 . 格式转换
 	if con.Format.Switch {
 		f = ffmpeg.CoverToCustomFormat(fCmd, f, con.Format.Form)
