@@ -1,15 +1,16 @@
-package config
+package common
 
 import (
 	"fmt"
 	"github.com/BurntSushi/toml"
+	file2 "myTool/file"
 	"os"
 	"path/filepath"
 )
 
 var VideoWaterCon *Config
+
 type Config struct {
-	SectionPath string `toml:"SectionPath"`
 	VideoPath string `toml:"videoPath"`
 	System int
 	AppId string `json:"appId"`
@@ -35,6 +36,7 @@ type Config struct {
 
 
 type CutSection struct {
+	SectionPath string `toml:"sectionPath"`
 	Switch bool
 	Duration int
 }
@@ -146,27 +148,29 @@ type FilmEnd struct {
 }
 
 
-
-
 func ReadConfig(file string) *Config  {
 	if VideoWaterCon != nil {
 		return VideoWaterCon
 	}
 
-	cur, _ := os.Getwd()
-	fmt.Println("工程路径：", cur)
-
-	conPath := filepath.Join(cur, "config.toml")
-
+	conPath := ""
 	if file == "" {
+		cur, _ := os.Getwd()
+		conPath = filepath.Join(cur, "config.toml")
+
+		if file2.PathExist(conPath) == false {
+			conPath = os.ExpandEnv("$HOME") + "/Desktop/vm/config.toml"
+		}
+
 		file = conPath
+
 	}
+
 	_, err := toml.DecodeFile(file, &VideoWaterCon)
 	if err != nil {
 		fmt.Println(err)
 		return nil
 	}
-
 
 	return VideoWaterCon
 

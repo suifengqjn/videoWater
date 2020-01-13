@@ -1,26 +1,25 @@
-package factory
+package deal
 
 import (
 	"fmt"
 	"myProject/videoWater/account"
-	"myProject/videoWater/deal/config"
+	"myProject/videoWater/common"
 	"myTool/ffmpeg"
 	"myTool/file"
 	"time"
 )
 
-func DoSection(con *config.Config)  {
-	if len(con.SectionPath) == 0 {
-		return
+func DoSection(con *common.Config) int  {
+	if con.CutSection.Switch == false {
+		return 0
 	}
 
-	files, err := file.GetAllFiles(con.VideoPath)
-	if err != nil || con.CutSection.Switch == false {
-
-		return
+	files, err := file.GetAllFiles(con.CutSection.SectionPath)
+	if err != nil {
+		return 0
 	}
 
-
+	count := 0
 	for _, f := range files {
 
 		if ffmpeg.IsVideo(f) == false {
@@ -42,8 +41,9 @@ func DoSection(con *config.Config)  {
 		if account.VDAccount.AccType == account.AccTypeBase {
 			account.VDAccount.AddAction()
 		}
+		count++
 
 	}
 
-
+	return count
 }

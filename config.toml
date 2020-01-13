@@ -8,12 +8,13 @@
 videoPath = "./video"
 system = 0
 
-appId = "3def967d725b26cb31e183fd7cf757c4"
+appId = "e7ccc3f5d94c57f873a6aba574f19597"
 
 ## 独立模块
 # 视频分段
 # duration 每一段的时长（单位：秒）
 [cutSection]
+    sectionPath = "./section"
     switch = false
     duration = 10
 

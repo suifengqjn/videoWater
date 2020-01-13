@@ -3,7 +3,10 @@ package account
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
+	"myTool/common"
+	"myTool/sign"
 	"myTool/sys"
 	"net/http"
 	"sync"
@@ -11,7 +14,7 @@ import (
 )
 
 const remoteHost  = "http://106.12.220.252:8001"
-
+const localHost  = "http://127.0.0.1:8001"
 type Account struct {
 	AccType int `json:"acc_type"`
 	Count   int `json:"count"`
@@ -22,9 +25,10 @@ type Account struct {
 }
 
 func getAccountInfo(appId string) *Account {
-	url := remoteHost + "/vd/account_info"
+	url := remoteHost + "/vm/account_info"
 	method := "POST"
 
+	url += fmt.Sprintf("?sign=%v", sign.MakeApiSign())
 
 	param := make(map[string]string)
 	param["host"] = sys.GetSysInfo().IP
@@ -39,6 +43,7 @@ func getAccountInfo(appId string) *Account {
 		return nil
 	}
 	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("X-API-KEY", common.MD5String(fmt.Sprintf("%v",time.Now().UTC().UnixNano())))
 	res, err := client.Do(req)
 	if err != nil {
 		return nil
@@ -58,7 +63,8 @@ func getAccountInfo(appId string) *Account {
 }
 
 func (a *Account)addRequest() error  {
-	url := remoteHost + "/vd/count"
+	url := remoteHost + "/vm/count"
+	url += fmt.Sprintf("?sign=%v", sign.MakeApiSign())
 	method := "POST"
 
 	param := make(map[string]string)
@@ -73,6 +79,7 @@ func (a *Account)addRequest() error  {
 		return nil
 	}
 	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("X-API-KEY", common.MD5String(fmt.Sprintf("%v",time.Now().UTC().UnixNano())))
 	res, err := client.Do(req)
 	if err != nil {
 		return nil
@@ -97,5 +104,16 @@ func (a *Account)CheckAccountStatus()  {
 
 	}()
 
+}
+
+func (a *Account)LimitTest()  {
+
+	start := time.Now().Unix()
+	for i:= 0;i<500;i++ {
+		_ = a.addRequest()
+	}
+	end := time.Now().Unix()
+
+	fmt.Println(end-start)
 
 }

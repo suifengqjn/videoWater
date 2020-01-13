@@ -7,13 +7,15 @@ import (
 	"io/ioutil"
 	"log"
 	"myProject/videoWater/account"
-	"myProject/videoWater/deal/config"
-	"myProject/videoWater/deal/factory"
+	"myProject/videoWater/common"
+	"myProject/videoWater/deal"
 	"net/http"
+	"strings"
 	"time"
 )
 var conFile = flag.String("f", "", "config file")
 var videoPath = flag.String("v", "", "config file")
+var line = "************************************************************"
 func main() {
 	Run()
 }
@@ -21,7 +23,7 @@ func main() {
 func Run()  {
 
 	flag.Parse()
-	con := config.ReadConfig(*conFile)
+	con := common.ReadConfig(*conFile)
 	if con == nil {
 		log.Println("配置文件有误")
 		time.Sleep(time.Second * 5)
@@ -39,25 +41,48 @@ func Run()  {
 	}
 
 	acc := account.GetAccount(con.AppId)
-	if acc.AccType < 0 {
-		fmt.Println("    密钥无效，请购买密钥   ")
-		time.Sleep(time.Second * 500)
-		return
-	} else {
 
+
+	fmt.Println(line)
+	fmt.Println(line)
+	fmt.Println(line)
+	fmt.Println()
+	fmt.Println()
+	if acc.AccType < 0 {
+		fmt.Println(formatline("账户ID:"+acc.AppId))
+		fmt.Println(formatline("密钥无效，请购买密钥"))
+		fmt.Println(formatline("vip 购买地址："+"https://www.kuaifaka.com/purchasing?link=3ZUpQ"))
+	} else {
 		fmt.Printf("账户 ID：%v \n",acc.AppId)
 		fmt.Printf("账户类型：%v \n",acc.TYPE())
-		fmt.Printf("账户有效期：%v \n",acc.Time)
+		fmt.Printf("%v \n",acc.Time)
 		fmt.Println(acc.Msg)
 	}
 
+	fmt.Println()
+	fmt.Println()
+	fmt.Println(line)
+	fmt.Println(line)
+	fmt.Println(line)
 
+
+	//acc.LimitTest()
+	//
+	//
+	//return
 	if len(*videoPath) > 0 {
 		con.VideoPath = *videoPath
 		fmt.Println(*videoPath)
 	}
 
-	factory.DoFactory(con)
+	deal.DoFactory(con)
+
+}
+
+func formatline(text string)string  {
+
+	r := strings.Repeat(" ", 10)
+	return r + text + r
 
 }
 
@@ -157,3 +182,4 @@ func check() bool  {
 
 	return false
 }
+

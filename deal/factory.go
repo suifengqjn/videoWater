@@ -1,9 +1,9 @@
-package factory
+package deal
 
 import (
 	"fmt"
 	"myProject/videoWater/account"
-	"myProject/videoWater/deal/config"
+	"myProject/videoWater/common"
 	"myTool/ffmpeg"
 	"myTool/file"
 	"os"
@@ -16,27 +16,32 @@ import (
 var fCmd = ""
 
 
-func DoFactory(con *config.Config)  {
+func DoFactory(con *common.Config)  {
 
 	fCmd = GetFCmd(con.System)
 
-	DoSection(con)
+	c1 := DoSection(con)
 
-	doEdit(con)
+	c2 := doEdit(con)
+
+	t := c1 + c2
+	if t == 0 {
+		fmt.Println("没有视频需要处理")
+	} else {
+		fmt.Printf("一共处理视频 %v 个",t)
+	}
 
 }
 
 
 
-func doEdit(con *config.Config) {
+func doEdit(con *common.Config) int {
 	files, err := file.GetAllFiles(con.VideoPath)
 	if err != nil || len(files) == 0 {
 		fmt.Printf("当前目录：%v 没有文件", con.VideoPath)
-
 		time.Sleep(time.Second * 5)
 	}
-
-
+	count := 0
 	_, oriDirs, _ := file.GetCurrentFilesAndDirs(con.VideoPath)
 	var delDirs []string
 	for _, f := range files {
@@ -51,7 +56,7 @@ func doEdit(con *config.Config) {
 			break
 		}
 
-		fmt.Println("当前处理", f)
+		fmt.Println("正在处理", f)
 
 		dir := filepath.Dir(f)
 		result := filepath.Join(dir,"result")
@@ -88,6 +93,7 @@ func doEdit(con *config.Config) {
 				delDirs = append(delDirs, d)
 			}
 		}
+		count ++
 
 	}
 
@@ -100,10 +106,11 @@ func doEdit(con *config.Config) {
 		}
 	}
 
+	return count
 }
 
 
-func deal(f string, con *config.Config)string  {
+func deal(f string, con *common.Config)string  {
 	//1 . 格式转换
 	if con.Format.Switch {
 		f = ffmpeg.CoverToCustomFormat(fCmd, f, con.Format.Form)
