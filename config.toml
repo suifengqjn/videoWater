@@ -14,7 +14,7 @@ videoPath = "./video"
 system = 0
 
 # 密钥
-appId = "85b026d19f6940aa6a58a966346e1abf1"
+appId = "56b026d19f6940aa6a58a966346e1abf"
 
 ## 独立模块
 # 视频分段
@@ -80,25 +80,26 @@ appId = "85b026d19f6940aa6a58a966346e1abf1"
     w = 100
     h = 50
 
-# 镜像
+# 8.镜像
 # direction  h : 水平方向（左右镜像） v：垂直方向（上下镜像）
 [mirror]
     switch = false
     direction = "v"
 
-## 8. 调整视频分辨率
+## 9. 调整视频分辨率
 [resolution]
     switch = false
     w = 576
     h = 1024
 
-##压缩,一般 调整 crf 即可
+## 10. 压缩,一般 调整 crf 即可
+
 [compress]
     switch = false
     preset = "medium" #（ultrafast，superfast，veryfast，faster，fast，medium，slow，slower，veryslow和placebo）
     crf = 40 # 指定输出视频的质量，取值范围是0-51，默认值为23，数字越小输出视频的质量越高
 
-## 9. 文字水印
+## 11. 文字水印
 [waterText]
     switch = false
     content = "文字logo"
@@ -110,7 +111,7 @@ appId = "85b026d19f6940aa6a58a966346e1abf1"
     sp1 = 50
     sp2 = 100
 
-## 9.1 滚动文字
+## 11.1 滚动文字
 # isTop 顶部还是底部 sp 距离顶部或者底部的距离
 # leftToRight 是否从坐到右
 [runWaterText]
@@ -124,7 +125,7 @@ appId = "85b026d19f6940aa6a58a966346e1abf1"
     sp = 50
 
 
-## 10. 图片水印
+## 12. 图片水印
 [waterImage]
     switch = false
     path = "./source/item.png"
@@ -132,17 +133,17 @@ appId = "85b026d19f6940aa6a58a966346e1abf1"
     sp1 = 50
     sp2 = 100
 
-# 11. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
+# 13. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
 [speed]
     switch = false
     v = "2"
 
-## 12. 片头
+## 14. 片头
 [filmTitle]
     switch = true
     path = "./source/head.mp4"
 
-## 13. 片尾
+## 15. 片尾
 [filmEnd]
     switch = true
     path = "./source/foot.mp4"
