@@ -172,6 +172,12 @@ func deal(f string, con *common.Config)string  {
 	// 6. crop
 	if con.Crop.Switch {
 		f = ffmpeg.CropVideo(fCmd,f,con.Crop.Start,con.Crop.Duration,con.Crop.X,con.Crop.Y,con.Crop.W,con.Crop.H)
+	} else if con.Crop1.Switch {
+		info, err := ffmpeg.GetVideoInfo(fCmd, f)
+		if err != nil {
+			return f
+		}
+		f = info.CropVideoWithSpan(fCmd, f, con.Crop1.Start,con.Crop1.Duration, con.Crop1.Left,con.Crop1.Right,con.Crop1.Top,con.Crop1.Bottom)
 	}
 
 	// 7. clear water

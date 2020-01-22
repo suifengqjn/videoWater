@@ -29,10 +29,6 @@ func Run()  {
 		time.Sleep(time.Second * 5)
 		return
 	}
-	if !check() {
-		time.Sleep(time.Second * 5)
-		return
-	}
 
 	if len(con.AppId) == 0 {
 		fmt.Println("    请购买密钥   ")
@@ -48,6 +44,7 @@ func Run()  {
 	fmt.Println()
 	fmt.Println()
 	fmt.Println(formatline(fmt.Sprintf("伪原创视频批量剪辑器 %v", common.Version)))
+	fmt.Println()
 	if acc.AccType < 0 {
 		fmt.Println(formatline("账户密钥:"+acc.AppId))
 		fmt.Println(formatline("密钥无效，请购买密钥"))
@@ -69,16 +66,14 @@ func Run()  {
 		time.Sleep(time.Second * 500)
 		return
 	}
-	//acc.LimitTest()
-	//
-	//
-	//return
+	time.Sleep(time.Second * 5)
 	if len(*videoPath) > 0 {
 		con.VideoPath = *videoPath
 		fmt.Println(*videoPath)
 	}
 
 	deal.DoFactory(con)
+	time.Sleep(time.Second * 5)
 
 }
 

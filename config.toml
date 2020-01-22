@@ -14,7 +14,7 @@ videoPath = "./video"
 system = 0
 
 # 密钥
-appId = "56b026d19f6940aa6a58a966346e1abf"
+appId = "86b026d19f6940aa6a58a966346e1abf"
 
 ## 独立模块
 # 视频分段
@@ -59,9 +59,12 @@ appId = "56b026d19f6940aa6a58a966346e1abf"
     switch = false
     value = 4
 
+# 两种剪裁方式，只能选择一种
 # 6. 视频剪裁
 # 如果全部剪裁 start duration 填0
 # start = 5 duration = 10 含义 从第5秒开始，剪裁往后的10秒
+# 通过坐标及区域剪裁
+
 [crop]
     switch = false
     start = 0  #从第几秒开始剪裁 （可选）
@@ -71,6 +74,21 @@ appId = "56b026d19f6940aa6a58a966346e1abf"
     w = 300
     h = 534
 
+# 6.1 视频剪裁
+# 如果全部剪裁 start duration 填0
+# start = 5 duration = 10 含义 从第5秒开始，剪裁往后的10秒
+# left 左边减去多少个像素
+# right 右边减去多少个像素
+# top 顶部减去多少个像素
+# bottom 底部减去多少个像素
+[crop1]
+    switch = true
+    start = 0  #从第几秒开始剪裁 （可选）
+    duration = 0 # 剪裁时长（可选）
+    left = 10
+    right = 20
+    top = 40
+    bottom = 40
 
 ## 7. 去除水印
 [clearWater]
@@ -102,24 +120,24 @@ appId = "56b026d19f6940aa6a58a966346e1abf"
 ## 11. 文字水印
 [waterText]
     switch = false
-    content = "文字logo"
+    content = "微信 cywt123"
     path = "./source/simsun.ttc"
-    size = 50
+    size = 30
     color = "red"
-    alpha = 0.8
+    alpha = 1.0
     style = 1
-    sp1 = 50
-    sp2 = 100
+    sp1 = 20
+    sp2 = 30
 
 ## 11.1 滚动文字
 # isTop 顶部还是底部 sp 距离顶部或者底部的距离
 # leftToRight 是否从坐到右
 [runWaterText]
     switch = false
-    content = "测试文字"
+    content = "微信 cywt123"
     path = "./source/simsun.ttc"
-    size = 50
-    color = "red"
+    size = 30
+    color = "black"
     isTop = true
     leftToRight = true
     sp = 50
@@ -140,11 +158,11 @@ appId = "56b026d19f6940aa6a58a966346e1abf"
 
 ## 14. 片头
 [filmTitle]
-    switch = true
+    switch = false
     path = "./source/head.mp4"
 
 ## 15. 片尾
 [filmEnd]
-    switch = true
+    switch = false
     path = "./source/foot.mp4"
 

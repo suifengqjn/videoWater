@@ -1,25 +1,21 @@
-# videoWater
+# 批量伪原创视频剪辑器
 
-[快速入门视频教程](https://pan.baidu.com/s/1UnxcLYXOKnOZbMKcguOCig)
+[快速入门视频教程](https://www.bilibili.com/video/av84085197/)
 
-[详细版视频教程](https://v.youku.com/v_show/id_XNDQ3NDkwNTY1Ng==.html)
+[针对小白超级详细的视频教程及文档说明](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
 
-[针对小白的使用文档教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
-
+## 其他相关软件
 
 [视频采集器](https://github.com/suifengqjn/videoCollector)
-
 [视频全自动发布器](https://github.com/suifengqjn/mediaBot)
 
 流程：视频自动采集->伪原创剪辑->全自动发布： 全自动流水线生产，躺着赚钱
-
 采集器和发布器点击上面链接，本页面软件是全自动视频剪辑软件
 
 
 ## sublime Text 下载
 
 链接:https://pan.baidu.com/s/1b7NM83ii66IaeibfXlNATQ  密码:wfys
-
 config.toml 配置文件不能直接用记事本打开，显示会错乱，请下载sublime Text 打开
 
 ## 功能介绍
@@ -30,7 +26,7 @@ config.toml 配置文件不能直接用记事本打开，显示会错乱，请�
 填好配置信息后，一键启动即可处理成千上万个视频。每次使用只需双击启动即可
 
 下面的任意一个操作，都会修改视频的md5，也就是所谓的md5去重。
-经过下面的2，3，4，5，6，8，11处理，极高概率通过各平台的视频重复审查
+经过本软件处理后，极高概率通过各大自媒体平台的原创审核
 
 * 已完成
 * [x] [视频分段] 
@@ -61,21 +57,32 @@ config.toml 配置文件不能直接用记事本打开，显示会错乱，请�
 * [ ] [6. 多种滤镜]
 
 
+## 软件收费说明
+
+基础套餐：1元，有效期一个月，每天20个视频
+月卡套餐: 15元，有效期一个月，每天200个视频
+半年卡套餐: 100元，有效期180天，每天1000个视频
+年卡套餐: 180元，有效期360天，无限制
+
+密钥购买地址：[https://www.kuaifaka.com/purchasing?link=3ZUpQ](https://www.kuaifaka.com/purchasing?link=3ZUpQ)
+
+## 打包程序下载
+
+支持 mac win32 win64 系统
+链接:https://pan.baidu.com/s/1S7uEStDjSmkcCcucdjW0Jw  密码:bvnw
+
 ## 程序使用
-下载 release 对应系统的包
+
 打开 config.toml 文件，修改配置，每一项都有一个开关，选择自己需要操作的选项。
 将需要处理的视频全部放入video文件夹(支持多目录)，然后运行
 
 解压文件夹后
-
 **mac 运行**
 cd mac  进入到mac 文件夹下
 ./vm
 
-
 **windows 运行**
 双击vm.exe 文件即可
-
 
 文件夹中已经配置了示例配置和演示用的视频，直接运行即可查看效果
 
@@ -117,13 +124,6 @@ cd mac  进入到mac 文件夹下
 
 #### style 5
 <img src="https://github.com/suifengqjn/videoWater/blob/master/image/style5.jpg?raw=true" width="120" height="212" alt="style 5"/>
-
-
-## 打包程序下载
-
-支持 mac win32 win64 系统
-
-链接:https://pan.baidu.com/s/1S7uEStDjSmkcCcucdjW0Jw  密码:bvnw
 
 
 ## 版本更新记录

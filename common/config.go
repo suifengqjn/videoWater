@@ -22,6 +22,7 @@ type Config struct {
 	CutFront CutFront	`toml:"cutFront"`
 	CutBack CutBack	`toml:"cutBack"`
 	Crop   Crop
+	Crop1   Crop1 `toml:"crop1"`
 	ClearWater ClearWater
 	Mirror Mirror
 	Resolution Resolution
@@ -82,6 +83,16 @@ type Crop struct {
 	Y int
 	W int
 	H int
+}
+
+type Crop1 struct {
+	Switch bool
+	Start int64
+	Duration int64
+	Left int
+	Right int
+	Top int
+	Bottom int
 }
 
 type ClearWater struct {
