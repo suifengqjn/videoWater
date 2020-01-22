@@ -119,7 +119,7 @@ appId = ""
 
 ## 11. 文字水印
 [waterText]
-    switch = false
+    switch = true
     content = "微信 cywt123"
     path = "./source/simsun.ttc"
     size = 30
@@ -145,11 +145,11 @@ appId = ""
 
 ## 12. 图片水印
 [waterImage]
-    switch = false
+    switch = true
     path = "./source/item.png"
     style = 3
-    sp1 = 50
-    sp2 = 100
+    sp1 = 20
+    sp2 = 20
 
 # 13. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
 [speed]
@@ -158,11 +158,11 @@ appId = ""
 
 ## 14. 片头
 [filmTitle]
-    switch = false
+    switch = true
     path = "./source/head.mp4"
 
 ## 15. 片尾
 [filmEnd]
-    switch = false
+    switch = true
     path = "./source/foot.mp4"
 

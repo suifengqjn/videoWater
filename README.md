@@ -79,6 +79,8 @@ config.toml 配置文件不能直接用记事本打开，显示会错乱，请�
 打开 config.toml 文件，修改配置，每一项都有一个开关，选择自己需要操作的选项。
 将需要处理的视频全部放入video文件夹(支持多目录)，然后运行
 
+下载的程序包中已填好样例配置，只需填入密钥即可双击启动，查看效果
+
 解压文件夹后
 **mac 运行**
 cd mac  进入到mac 文件夹下
@@ -168,12 +170,12 @@ windows `./vm.exe -f config1.toml`
 * 视频镜像
 * 视频分段
 * 视频截图
+#### 2.1
+* 新增一种视频剪裁方式
 
 ## 其他说明
 
-
 我们的目标是软件一开，实现睡后收入
-
 有任何问题 微信资讯
 
 ![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpeg?raw=true)
