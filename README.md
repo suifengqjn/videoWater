@@ -13,11 +13,17 @@
 采集器和发布器点击上面链接，本页面软件是全自动视频剪辑软件
 
 
+## 注意事项（请仔细查看）
+
+许多用户反馈容易出错的地方
+
+* 配置文件不要用记事本直接打开，请用sublime Text 打开修改 
+* 配置文件中的引号(") 逗号(,) 都是英文输入法 
+
 ## sublime Text 下载
 
 链接:https://pan.baidu.com/s/1b7NM83ii66IaeibfXlNATQ  密码:wfys
 
-config.toml 配置文件不能直接用记事本打开，显示会错乱，请下载sublime Text 打开
 
 ## 功能介绍
 
