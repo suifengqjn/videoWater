@@ -93,6 +93,43 @@ func (a *Account)addRequest() error  {
 	return err
 }
 
+
+func CheckVersion() (int, string) {
+	url := remoteHost + "/vm/check"
+	url += fmt.Sprintf("?sign=%v", sign.MakeApiSign())
+	url += fmt.Sprintf("&version=%v", Version)
+	method := "POST"
+
+	client := &http.Client{}
+
+	var param = make(map[string]string)
+	buf, _ := json.Marshal(param)
+	req, err := http.NewRequest(method, url, bytes.NewReader(buf))
+	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("X-API-KEY", common.MD5String(fmt.Sprintf("%v", time.Now().UTC().UnixNano())))
+	if err != nil {
+
+		return 0, ""
+	}
+	res, err := client.Do(req)
+	if err != nil {
+		return 0, ""
+	}
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	type Message struct {
+		Code int    `json:"code"`
+		Msg  string `json:"msg"`
+	}
+	var msg Message
+	_ = json.Unmarshal(body, &msg)
+
+	return msg.Code, msg.Msg
+
+}
+
+
 func (a *Account)CheckAccountStatus()  {
 
 	go func() {
