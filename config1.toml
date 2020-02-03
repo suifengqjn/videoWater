@@ -10,7 +10,7 @@
 # true ：打开   false 关闭
 
 # 视频路径
-videoPath = "video"
+videoPath = "./video"
 system = 0
 
 # 密钥
@@ -82,7 +82,7 @@ appId = ""
 # top 顶部减去多少个像素
 # bottom 底部减去多少个像素
 [crop1]
-    switch = true
+    switch = false
     start = 0  #从第几秒开始剪裁 （可选）
     duration = 0 # 剪裁时长（可选）
     left = 10

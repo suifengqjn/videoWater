@@ -6,6 +6,7 @@ import (
 	file2 "myTool/file"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 var VideoWaterCon *Config
@@ -177,7 +178,6 @@ func ReadConfig(file string) *Config  {
 	conPath := ""
 	cur, _ := os.Getwd()
 	if file == "" {
-
 		conPath = filepath.Join(cur, "config.toml")
 
 		if file2.PathExist(conPath) == false {
@@ -193,9 +193,13 @@ func ReadConfig(file string) *Config  {
 		fmt.Println(err)
 		return nil
 	}
+	if strings.HasPrefix(VideoWaterCon.VideoPath,"./") {
 
-	VideoWaterCon.VideoPath = filepath.Join(cur,VideoWaterCon.VideoPath)
+	} else {
+		VideoWaterCon.VideoPath = filepath.Join(cur,VideoWaterCon.VideoPath)
+	}
 
+	fmt.Println(VideoWaterCon.VideoPath)
 	return VideoWaterCon
 
 }

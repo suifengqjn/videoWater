@@ -10,7 +10,7 @@
 # true ：打开   false 关闭
 
 # 视频路径
-videoPath = "video"
+videoPath = "./video"
 system = 0
 
 # 空闲时间每隔几分钟检测 video 是否有视频，若有则处理,处理完成后将文件移到 output

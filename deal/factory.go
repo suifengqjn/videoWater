@@ -192,6 +192,9 @@ func deal(f string, con *common.Config)string  {
 		if err != nil {
 			return f
 		}
+		if con.Crop1.Duration < 0 {
+			con.Crop1.Duration = int64(info.Duration) - con.Crop1.Start + con.Crop1.Duration
+		}
 		f = info.CropVideoWithSpan(fCmd, f, con.Crop1.Start,con.Crop1.Duration, con.Crop1.Left,con.Crop1.Right,con.Crop1.Top,con.Crop1.Bottom)
 	}
 
@@ -300,7 +303,7 @@ func deal(f string, con *common.Config)string  {
 
 	// 两种情况 1. 视频不做任何处理 视频和信息都在video 下
 	// 2. 经过剪辑 视频在video/result 中,信息在video 下
-	if len(con.Output) > 0 {
+	if con.Task > 0 && len(con.Output) > 0 {
 		if f != temp {
 			_ = os.RemoveAll(temp)
 		} else {

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 )
-var conFile = flag.String("f", "", "config file")
+var conFile = flag.String("f", "./config.toml", "config file")
 var videoPath = flag.String("v", "", "config file")
 var line = "********************************************************************************"
 func main() {
