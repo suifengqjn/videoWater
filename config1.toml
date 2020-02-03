@@ -10,7 +10,7 @@
 # true ：打开   false 关闭
 
 # 视频路径
-videoPath = "./video"
+videoPath = "video"
 system = 0
 
 # 密钥

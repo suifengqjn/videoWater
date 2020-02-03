@@ -31,6 +31,11 @@ func DoFactory(con *common.Config)  {
 		fmt.Printf("一共处理视频 %v 个",t)
 	}
 
+	if con.Task > 0 && len(con.Output) > 0 {
+		move(con.VideoPath + "/result",con.Output)
+	}
+
+
 }
 
 
@@ -77,11 +82,11 @@ func doEdit(con *common.Config) int {
 
 		f = deal(f, con)
 
-		if account.VDAccount.AccType == account.AccTypeBase {
+		if account.VDAccount.AccType < account.AccTypeYear {
 			account.VDAccount.AddAction()
 		}
 
-
+		// 把最终的视频移入result 中
 		to := result + "/" + filepath.Base(f)
 		_ = file.MoveFile(f, to)
 
@@ -99,12 +104,13 @@ func doEdit(con *common.Config) int {
 
 	_, dirs, _ := file.GetCurrentFilesAndDirs(con.VideoPath)
 	delDirs = append(delDirs, dirs...)
-
+	//删除临时目录
 	for _, d := range delDirs {
 		if !Contains(oriDirs, d) {
 			_ = os.RemoveAll(d)
 		}
 	}
+
 
 	return count
 }
@@ -112,7 +118,7 @@ func doEdit(con *common.Config) int {
 
 func deal(f string, con *common.Config)string  {
 
-
+	temp := f
 	// 0. snip
 	if con.Snip.Switch {
 		ffmpeg.Snip(fCmd, f, strconv.Itoa(con.Snip.T),strconv.Itoa(con.Snip.R))
@@ -151,23 +157,32 @@ func deal(f string, con *common.Config)string  {
 		f = ffmpeg.UpdateBitRate(fCmd,f,value)
 
 	}
-	//4. cut front
-	if con.CutFront.Switch {
+	if con.CutFront.Switch && con.CutBack.Switch {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
 		}
-		f = info.CutFront(fCmd,f,con.CutFront.Value)
+		f = info.CutFrontAndBack(fCmd,f,con.CutFront.Value,con.CutBack.Value)
+	} else {
+		//4. cut front
+		if con.CutFront.Switch {
+			info, err := ffmpeg.GetVideoInfo(fCmd, f)
+			if err != nil {
+				return f
+			}
+			f = info.CutFront(fCmd,f,con.CutFront.Value)
+		}
+
+		//5. cut back
+		if con.CutBack.Switch {
+			info, err := ffmpeg.GetVideoInfo(fCmd, f)
+			if err != nil {
+				return f
+			}
+			f = info.CutBack(fCmd,f,con.CutBack.Value)
+		}
 	}
 
-	//5. cut back
-	if con.CutBack.Switch {
-		info, err := ffmpeg.GetVideoInfo(fCmd, f)
-		if err != nil {
-			return f
-		}
-		f = info.CutBack(fCmd,f,con.CutBack.Value)
-	}
 
 	// 6. crop
 	if con.Crop.Switch {
@@ -282,5 +297,38 @@ func deal(f string, con *common.Config)string  {
 		f = info.MergeVideoFooter(fCmd, newFooter,f)
 	}
 
+
+	// 两种情况 1. 视频不做任何处理 视频和信息都在video 下
+	// 2. 经过剪辑 视频在video/result 中,信息在video 下
+	if len(con.Output) > 0 {
+		if f != temp {
+			_ = os.RemoveAll(temp)
+		} else {
+
+			//将原始视频移到result 中
+			fileName := filepath.Base(temp)
+			dir := filepath.Dir(temp)
+
+			dest := dir + "/result/" + fileName
+			_ = file.MoveFile(temp,dest)
+
+		}
+
+		fileName := filepath.Base(temp)
+		dir := filepath.Dir(temp)
+		preFile := strings.Split(fileName,".")[0]
+
+		txtPath := dir + "/" + preFile + ".txt"
+
+		if file.PathExist(txtPath) {
+			dest := dir + "/result/"  + preFile + ".txt"
+			_ = file.MoveFile(txtPath,dest)
+		}
+	}
+
 	return f
+}
+
+func move(from ,to string)  {
+	_ = file.MoveDirFiles(from,to)
 }

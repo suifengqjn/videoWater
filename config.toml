@@ -10,8 +10,13 @@
 # true ：打开   false 关闭
 
 # 视频路径
-videoPath = "./video"
+videoPath = "video"
 system = 0
+
+# 空闲时间每隔几分钟检测 video 是否有视频，若有则处理,处理完成后将文件移到 output
+# 此项功能是配合自动发布器使用
+task = 0
+#output = "/Users/qianjianeng/Desktop/media/vp_mac/pub_videos"
 
 # 密钥
 appId = "86b026d19f6940aa6a58a966346e1abf"
@@ -51,13 +56,13 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 
 ## 4. 减掉视频前几秒
 [cutFront]
-    switch = false
-    value = 6
+    switch = true
+    value = 7
 
 ## 5. 减掉视频最后几秒
 [cutBack]
-    switch = false
-    value = 4
+    switch = true
+    value = 7
 
 # 两种剪裁方式，只能选择一种
 # 6. 视频剪裁
@@ -82,7 +87,7 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # top 顶部减去多少个像素
 # bottom 底部减去多少个像素
 [crop1]
-    switch = true
+    switch = false
     start = 0  #从第几秒开始剪裁 （可选）
     duration = 0 # 剪裁时长（可选）
     left = 10

@@ -83,8 +83,15 @@ func Run()  {
 		con.VideoPath = *videoPath
 		fmt.Println(*videoPath)
 	}
-
 	deal.DoFactory(con)
+	if con.Task > 0 {
+		ticker := time.NewTicker(time.Minute * time.Duration(con.Task))
+
+		for range ticker.C {
+			deal.DoFactory(con)
+		}
+	}
+
 	time.Sleep(time.Second * 5)
 
 }

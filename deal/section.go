@@ -38,7 +38,7 @@ func DoSection(con *common.Config) int  {
 		}
 
 		info.CutSection(fCmd, f, con.CutSection.Duration)
-		if account.VDAccount.AccType == account.AccTypeBase {
+		if account.VDAccount.AccType < account.AccTypeYear {
 			account.VDAccount.AddAction()
 		}
 		count++

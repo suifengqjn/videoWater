@@ -12,8 +12,10 @@ var VideoWaterCon *Config
 
 type Config struct {
 	VideoPath string `toml:"videoPath"`
-	System int
-	AppId string `json:"appId"`
+	System int `toml:"system"`
+	Task int `toml:"task"`
+	Output string `toml:"output"`
+	AppId string `toml:"appId"`
 	CutSection CutSection
 	Snip Snip
 	Format Format
@@ -173,8 +175,9 @@ func ReadConfig(file string) *Config  {
 	}
 
 	conPath := ""
+	cur, _ := os.Getwd()
 	if file == "" {
-		cur, _ := os.Getwd()
+
 		conPath = filepath.Join(cur, "config.toml")
 
 		if file2.PathExist(conPath) == false {
@@ -190,6 +193,8 @@ func ReadConfig(file string) *Config  {
 		fmt.Println(err)
 		return nil
 	}
+
+	VideoWaterCon.VideoPath = filepath.Join(cur,VideoWaterCon.VideoPath)
 
 	return VideoWaterCon
 

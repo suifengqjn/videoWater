@@ -7,7 +7,13 @@ const (
 	AccTypeYear
 	AccTypeSUPERVIP
 )
-
+/*
+	AccTypeBase 基础套餐 ￥1 1天20个 有效期一个月
+	AccTypeMonth 月卡 ￥15 1天200个
+	AccTypeHalfYear 半年卡 ￥80 1天1000个
+	AccTypeYear 年卡 ￥180 数量不限
+	AccTypeSUPERVIP 永久 ￥500 数量不限
+*/
 
 
 var VDAccount *Account
@@ -20,7 +26,7 @@ func GetAccount(appId string) *Account  {
 
 
 func (a *Account)AddAction()  {
-	if a.AccType ==  AccTypeBase{
+	if a.AccType < AccTypeYear{
 		a.lock.Lock()
 		defer a.lock.Unlock()
 		err := a.addRequest()
@@ -30,7 +36,7 @@ func (a *Account)AddAction()  {
 	}
 }
 func (a *Account)CanUse() bool  {
-	if a.AccType == AccTypeBase {
+	if a.AccType < AccTypeYear {
 		if a.Count <= 0 {
 			return false
 		}
@@ -46,7 +52,7 @@ func (a *Account)TYPE()string  {
 	} else if a.AccType == AccTypeHalfYear {
 		return "半年卡用户"
 	} else if a.AccType == AccTypeYear {
-		return "年卡"
+		return "年卡用户"
 	} else if a.AccType == AccTypeSUPERVIP {
 		return "终身高级VIP用户"
 	} else {
