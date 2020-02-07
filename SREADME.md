@@ -30,6 +30,8 @@
 
 [13. 伪原创参数配置推荐](https://www.bilibili.com/video/av84094116/)
 
+[14. 使用剪裁方式批量去水印](https://www.bilibili.com/video/av86108022)
+
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av84094229/)
 
 
