@@ -139,17 +139,17 @@ func deal(f ,resultDir string, con *common.Config)string  {
 
 	temp := f
 	// 0. snip
-	if con.Snip.Switch {
+	if con.Snip.Switch == 1 {
 		ffmpeg.Snip(fCmd, f, strconv.Itoa(con.Snip.T),strconv.Itoa(con.Snip.R))
 	}
 
 	//1 . 格式转换
-	if con.Format.Switch {
+	if con.Format.Switch == 1 {
 		f = ffmpeg.CoverToCustomFormat(fCmd, f, con.Format.Form)
 	}
 
 	// 2. frame code
-	if con.FrameRate.Switch {
+	if con.FrameRate.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -163,7 +163,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 
 	}
 	// 3. bit code
-	if con.BitRate.Switch {
+	if con.BitRate.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -176,7 +176,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 		f = ffmpeg.UpdateBitRate(fCmd,f,value)
 
 	}
-	if con.CutFront.Switch && con.CutBack.Switch {
+	if con.CutFront.Switch == 1 && con.CutBack.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -184,7 +184,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 		f = info.CutFrontAndBack(fCmd,f,con.CutFront.Value,con.CutBack.Value)
 	} else {
 		//4. cut front
-		if con.CutFront.Switch {
+		if con.CutFront.Switch == 1 {
 			info, err := ffmpeg.GetVideoInfo(fCmd, f)
 			if err != nil {
 				return f
@@ -193,7 +193,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 		}
 
 		//5. cut back
-		if con.CutBack.Switch {
+		if con.CutBack.Switch == 1 {
 			info, err := ffmpeg.GetVideoInfo(fCmd, f)
 			if err != nil {
 				return f
@@ -204,9 +204,9 @@ func deal(f ,resultDir string, con *common.Config)string  {
 
 
 	// 6. crop
-	if con.Crop.Switch {
+	if con.Crop.Switch == 1 {
 		f = ffmpeg.CropVideo(fCmd,f,con.Crop.Start,con.Crop.Duration,con.Crop.X,con.Crop.Y,con.Crop.W,con.Crop.H)
-	} else if con.Crop1.Switch {
+	} else if con.Crop1.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -218,29 +218,29 @@ func deal(f ,resultDir string, con *common.Config)string  {
 	}
 
 	// 7. clear water
-	if con.ClearWater.Switch {
+	if con.ClearWater.Switch == 1 {
 		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)
 	}
 
-	if con.ClearWater1.Switch {
+	if con.ClearWater1.Switch == 1 {
 		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater1.X,con.ClearWater1.Y,con.ClearWater1.W,con.ClearWater1.H)
 	}
 
 	//  mirror
-	if con.Mirror.Switch {
+	if con.Mirror.Switch == 1 {
 		f = ffmpeg.Mirror(fCmd, f,con.Mirror.Direction)
 	}
 
 	//8. Resolution
-	if con.Resolution.Switch {
+	if con.Resolution.Switch == 1 {
 		f = ffmpeg.UpdateResolution(fCmd, f, con.Resolution.W, con.Resolution.H)
 	}
 
-	if con.Compress.Switch {
+	if con.Compress.Switch == 1 {
 		f = ffmpeg.Compress(fCmd, f, con.Compress.Preset, con.Compress.Crf)
 	}
 	//9. water text
-	if con.WaterText.Switch {
+	if con.WaterText.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -260,7 +260,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 	}
 
 	// 9.1 runtext
-	if con.RunWaterText.Switch {
+	if con.RunWaterText.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -272,13 +272,13 @@ func deal(f ,resultDir string, con *common.Config)string  {
 			con.RunWaterText.Content,
 			con.RunWaterText.Color,
 			con.RunWaterText.Size,
-			con.RunWaterText.IsTop,
-			con.RunWaterText.LeftToRight,
+			con.RunWaterText.IsTop == 1,
+			con.RunWaterText.LeftToRight == 1,
 			con.RunWaterText.Sp,
 			)
 	}
 	//10. water image
-	if con.WaterImage.Switch {
+	if con.WaterImage.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -295,7 +295,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 	}
 
 	//10. speed
-	if con.Speed.Switch {
+	if con.Speed.Switch == 1 {
 		v,err := strconv.ParseFloat(con.Speed.V, 10)
 		if err == nil {
 			f = ffmpeg.Speed(fCmd,f,float32(v))
@@ -303,7 +303,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 
 	}
 	//11. film title
-	if con.FilmTitle.Switch {
+	if con.FilmTitle.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f
@@ -314,7 +314,7 @@ func deal(f ,resultDir string, con *common.Config)string  {
 		f = info.MergeVideoHeader(fCmd, newHeader,f)
 	}
 	//12. film end
-	if con.FilmEnd.Switch {
+	if con.FilmEnd.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
 			return f

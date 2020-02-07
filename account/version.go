@@ -1,3 +1,3 @@
 package account
 
-const Version = "2.1"
+const Version = "2.2"

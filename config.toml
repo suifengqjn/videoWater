@@ -6,12 +6,12 @@
 
 # x,y, w,h 代表 坐标和宽高
 # 注意：每一项操作都在前一项操作的结果上进行
-
-# true ：打开   false 关闭
+# 功能开关： 1 打开   0 关闭
 
 # 视频路径
-#
 videoPath = "video"
+
+# 如果程序无法识别系统 手动填写 MacOS  =1 Linux = 2 Win32 = 3 Win64 = 4
 system = 0
 
 # 空闲时间每隔几分钟检测 video 是否有视频，若有则处理,处理完成后将文件移到 output
@@ -28,14 +28,14 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # duration 每一段的时长（单位：秒）
 [cutSection]
     sectionPath = "./section"
-    switch = false
+    switch = 0
     duration = 10
 
 # 视频截图
 #  t 表示共要多少时间
 #  r 表示每一秒几帧
 [Snip]
-    switch = false
+    switch = 0
     t = 1
     r = 1
 ############################# 独立模块 ################################
@@ -44,29 +44,29 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 
 ## 1. 视频格式转换
 [format]
-    switch = false
+    switch = 0
     form = "mp4"
 
 ## 2. 帧率设置
 ## eg: +5 在原来的基础上+5  -5 在原来的基础上-5   20 修改为20
 [frameRate]
-    switch = false
+    switch = 0
     value = "+5"
 
 ## 3. 码率设置
 ## eg: +5 在原来的基础上+5  -5 在原来的基础上-5   20 修改为20
 [bitRate]
-    switch = false
+    switch = 0
     value = "+5"
 
 ## 4. 减掉视频前几秒
 [cutFront]
-    switch = false
+    switch = 0
     value = 7
 
 ## 5. 减掉视频最后几秒
 [cutBack]
-    switch = false
+    switch = 0
     value = 7
 
 # 两种剪裁方式，只能选择一种
@@ -76,7 +76,7 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # 通过坐标及区域剪裁
 
 [crop]
-    switch = false
+    switch = 0
     start = 0  #从第几秒开始剪裁 （可选）
     duration = 0 # 剪裁时长（可选）
     x = 320
@@ -92,7 +92,7 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # top 顶部减去多少个像素
 # bottom 底部减去多少个像素
 [crop1]
-    switch = false
+    switch = 0
     start = 0  #从第几秒开始剪裁 （可选）
     duration = 0 # 剪裁时长（可选）
     left = 10
@@ -102,14 +102,14 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 
 ## 7. 去除水印 ，可以设置两个位置
 [clearWater]
-    switch = false
+    switch = 0
     x = 10
     y = 10
     w = 100
     h = 50
 
 [clearWater1]
-    switch = false
+    switch = 0
     x = 10
     y = 10
     w = 100
@@ -118,25 +118,25 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # 8.镜像
 # direction  h : 水平方向（左右镜像） v：垂直方向（上下镜像）
 [mirror]
-    switch = false
+    switch = 0
     direction = "v"
 
 ## 9. 调整视频分辨率
 [resolution]
-    switch = false
+    switch = 0
     w = 576
     h = 1024
 
 ## 10. 压缩,一般 调整 crf 即可
 
 [compress]
-    switch = false
+    switch = 0
     preset = "medium" #（ultrafast，superfast，veryfast，faster，fast，medium，slow，slower，veryslow和placebo）
     crf = 40 # 指定输出视频的质量，取值范围是0-51，默认值为23，数字越小输出视频的质量越高
 
 ## 11. 文字水印
 [waterText]
-    switch = false
+    switch = 0
     content = "微信 cywt123"
     path = "./source/simsun.ttc"
     size = 30
@@ -150,19 +150,19 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # isTop 顶部还是底部 sp 距离顶部或者底部的距离
 # leftToRight 是否从坐到右
 [runWaterText]
-    switch = false
+    switch = 0
     content = "微信 cywt123"
     path = "./source/simsun.ttc"
     size = 30
     color = "black"
-    isTop = true
-    leftToRight = true
+    isTop = 1
+    leftToRight = 1
     sp = 50
 
 
 ## 12. 图片水印
 [waterImage]
-    switch = false
+    switch = 0
     path = "./source/item.png"
     style = 3
     sp1 = 50
@@ -170,16 +170,16 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 
 # 13. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
 [speed]
-    switch = false
+    switch = 0
     v = "2"
 
 ## 14. 片头
 [filmTitle]
-    switch = false
+    switch = 0
     path = "./source/head.mp4"
 
 ## 15. 片尾
 [filmEnd]
-    switch = false
+    switch = 0
     path = "./source/foot.mp4"
 

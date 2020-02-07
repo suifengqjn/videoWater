@@ -43,44 +43,44 @@ type Config struct {
 
 type CutSection struct {
 	SectionPath string `toml:"sectionPath"`
-	Switch bool
+	Switch int
 	Duration int
 }
 
 
 type Snip struct {
-	Switch bool
+	Switch int
 	T int
 	R int
 }
 
 type Format struct {
-	Switch bool
+	Switch int
 	Form string
 }
 
 type FrameRate struct {
-	Switch bool
+	Switch int
 	Value string
 }
 
 type BitRate struct {
-	Switch bool
+	Switch int
 	Value string
 }
 
 type CutFront struct {
-	Switch bool
+	Switch int
 	Value int
 }
 
 type CutBack struct {
-	Switch bool
+	Switch int
 	Value int
 }
 
 type Crop struct {
-	Switch bool
+	Switch int
 	Start int64
 	Duration int64
 	X int
@@ -90,7 +90,7 @@ type Crop struct {
 }
 
 type Crop1 struct {
-	Switch bool
+	Switch int
 	Start int64
 	Duration int64
 	Left int
@@ -100,7 +100,7 @@ type Crop1 struct {
 }
 
 type ClearWater struct {
-	Switch bool
+	Switch int
 	X int
 	Y int
 	W int
@@ -108,24 +108,24 @@ type ClearWater struct {
 }
 
 type Mirror struct {
-	Switch bool
+	Switch int
 	Direction string
 }
 
 type Resolution struct {
-	Switch bool
+	Switch int
 	W int
 	H int
 }
 
 type Compress struct {
-	Switch bool
+	Switch int
 	Preset string
 	Crf int
 }
 
 type WaterText struct {
-	Switch bool
+	Switch int
 	Content string
 	Path string
 	Size int
@@ -137,18 +137,18 @@ type WaterText struct {
 }
 
 type RunWaterText struct {
-	Switch  bool
+	Switch  int
 	Content string
 	Path    string
 	Size    int
 	Color   string
-	IsTop   bool `toml:"isTop"`
-	LeftToRight   bool `toml:"leftToRight"`
+	IsTop   int `toml:"isTop"`
+	LeftToRight   int `toml:"leftToRight"`
 	Sp      int
 }
 
 type WaterImage struct {
-	Switch bool
+	Switch int
 	Path string
 	Style int
 	Sp1 int
@@ -156,17 +156,17 @@ type WaterImage struct {
 }
 
 type Speed struct {
-	Switch bool
+	Switch int
 	V string
 }
 
 type FilmTitle struct {
-	Switch bool
+	Switch int
 	Path   string
 }
 
 type FilmEnd struct {
-	Switch bool
+	Switch int
 	Path   string
 }
 
