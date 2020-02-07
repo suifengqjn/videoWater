@@ -27,6 +27,7 @@ type Config struct {
 	Crop   Crop
 	Crop1   Crop1 `toml:"crop1"`
 	ClearWater ClearWater
+	ClearWater1 ClearWater `toml:"clearWater1"`
 	Mirror Mirror
 	Resolution Resolution
 	Compress Compress
@@ -199,7 +200,6 @@ func ReadConfig(file string) *Config  {
 		VideoWaterCon.VideoPath = filepath.Join(cur,VideoWaterCon.VideoPath)
 	}
 
-	fmt.Println(VideoWaterCon.VideoPath)
 	return VideoWaterCon
 
 }

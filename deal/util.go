@@ -3,6 +3,7 @@ package deal
 import (
 	"fmt"
 	"myTool/sys"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -15,7 +16,7 @@ func GetFCmd(system int) string {
 	}
 	if system == sys.MacOS {
 		return "./source/mac/tool"
-	} else if system == sys.Win64{
+	} else if system == sys.Win64 {
 		return "./source/win/64/tool.exe"
 	} else if system == sys.Win32 {
 		return "./source/win/32/tool.exe"
@@ -26,14 +27,14 @@ func GetFCmd(system int) string {
 
 }
 
-func StringToValue(str string)int  {
+func StringToValue(str string) int {
 	v, err := strconv.Atoi(str)
 	if err != nil {
 		return v
 	}
 
-	if strings.HasPrefix(str,"+") {
-		str = strings.TrimPrefix(str,"+")
+	if strings.HasPrefix(str, "+") {
+		str = strings.TrimPrefix(str, "+")
 		v, err := strconv.Atoi(str)
 		if err != nil {
 			return 0
@@ -41,8 +42,8 @@ func StringToValue(str string)int  {
 		return v
 	}
 
-	if strings.HasPrefix(str,"-") {
-		str = strings.TrimPrefix(str,"-")
+	if strings.HasPrefix(str, "-") {
+		str = strings.TrimPrefix(str, "-")
 		v, err := strconv.Atoi(str)
 		if err != nil {
 			return 0
@@ -59,4 +60,12 @@ func Contains(s []string, e string) bool {
 		}
 	}
 	return false
+}
+
+func createResultDir(videoDir string) string {
+	result := videoDir + "/result"
+	_ = os.RemoveAll(result)
+	_ = os.MkdirAll(result, os.ModePerm)
+
+	return result
 }

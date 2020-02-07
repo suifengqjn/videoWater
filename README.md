@@ -78,7 +78,7 @@
 ## 打包程序下载
 
 支持 mac win32 win64 系统
-链接:https://pan.baidu.com/s/1S7uEStDjSmkcCcucdjW0Jw  密码:bvnw
+链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
 
 ## 程序使用
 
@@ -178,7 +178,9 @@ windows `./vm.exe -f config1.toml`
 * 视频截图
 #### 2.1
 * 新增一种视频剪裁方式
-
+* 可设置两个水印位置
+* 调整结果输出
+* 添加定时任务(主要是用于配合自动发布)
 ## 其他说明
 
 我们的目标是软件一开，实现睡后收入

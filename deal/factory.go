@@ -38,9 +38,20 @@ func DoFactory(con *common.Config)  {
 
 }
 
+/*
 
+如果有多个文件，则最终所有视频都合并到一起
+1. 不剪辑，视频和文件都移入result中，视频和信息都在video 下
+2. 剪辑，视频和文件都移入result中，视频在video/result 中,信息在video 下
+
+VideoPath 1种是相对路径，一种是绝对路径
+*/
 
 func doEdit(con *common.Config) int {
+
+	result := createResultDir(con.VideoPath)
+
+
 	files, err := file.GetAllFiles(con.VideoPath)
 	if err != nil || len(files) == 0 {
 		fmt.Printf("当前目录：%v 没有文件", con.VideoPath)
@@ -49,8 +60,13 @@ func doEdit(con *common.Config) int {
 	count := 0
 	_, oriDirs, _ := file.GetCurrentFilesAndDirs(con.VideoPath)
 	var delDirs []string
+
+	if !Contains(oriDirs,result) {
+		oriDirs = append(oriDirs, result)
+	}
 	for _, f := range files {
 
+		temp := f
 		if ffmpeg.IsVideo(f) == false {
 			continue
 		}
@@ -63,47 +79,50 @@ func doEdit(con *common.Config) int {
 
 		fmt.Println("正在处理", f)
 
-		dir := filepath.Dir(f)
-		result := filepath.Join(dir,"result")
-		if !strings.HasPrefix(result,"/") && !strings.HasPrefix(result,"./")  {
-			result = "./" + result
-			oriDirs = append(oriDirs, result)
-		}
-		if file.PathExist(result) == false {
-			_ = os.MkdirAll(result, os.ModePerm)
-		}
-
-		_, dirs, _ := file.GetCurrentFilesAndDirs(dir)
-		for _, d := range dirs {
-			if !Contains(oriDirs, d) {
-				oriDirs = append(oriDirs, d)
-			}
-		}
-
-		f = deal(f, con)
+		f = deal(f,result, con)
 
 		if account.VDAccount.AccType < account.AccTypeYear {
 			account.VDAccount.AddAction()
 		}
 
 		// 把最终的视频移入result 中
-		to := result + "/" + filepath.Base(f)
-		_ = file.MoveFile(f, to)
+		if temp != f {
+			to := result + "/" + filepath.Base(f)
+			_ = file.MoveFile(f, to)
+
+		}
+		//临时生成的目录
+		/*
+		./video/2/123_2.mp4
+		./video/2/cut_front/add_head/123_2.mp4
+		*/
+		tempdir := filepath.Dir(temp)
+		newDir := filepath.Dir(f)
+		str := strings.TrimPrefix(newDir,tempdir)
+		str =strings.TrimPrefix(str,"/")
+		arr := strings.Split(str,"/")
+		if len(str) > 0 && len(arr) > 0 {
+			str = arr[0]
+			delDir := ""
+			if strings.HasPrefix(f,"./") {
+				delDir = "./" + tempdir + "/" + str
+			} else {
+				delDir = tempdir + "/" + str
+			}
+			if !Contains(delDirs, delDir) {
+				delDirs = append(delDirs,delDir)
+			}
+
+		}
+
 
 		//clean
-
-		_, dirs, _ = file.GetCurrentFilesAndDirs(dir)
-		for _, d := range dirs {
-			if !Contains(delDirs, d) {
-				delDirs = append(delDirs, d)
-			}
-		}
 		count ++
 
 	}
 
-	_, dirs, _ := file.GetCurrentFilesAndDirs(con.VideoPath)
-	delDirs = append(delDirs, dirs...)
+	//_, dirs, _ := file.GetCurrentFilesAndDirs(con.VideoPath)
+	//delDirs = append(delDirs, dirs...)
 	//删除临时目录
 	for _, d := range delDirs {
 		if !Contains(oriDirs, d) {
@@ -116,7 +135,7 @@ func doEdit(con *common.Config) int {
 }
 
 
-func deal(f string, con *common.Config)string  {
+func deal(f ,resultDir string, con *common.Config)string  {
 
 	temp := f
 	// 0. snip
@@ -201,6 +220,10 @@ func deal(f string, con *common.Config)string  {
 	// 7. clear water
 	if con.ClearWater.Switch {
 		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)
+	}
+
+	if con.ClearWater1.Switch {
+		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater1.X,con.ClearWater1.Y,con.ClearWater1.W,con.ClearWater1.H)
 	}
 
 	//  mirror
@@ -310,9 +333,8 @@ func deal(f string, con *common.Config)string  {
 
 			//将原始视频移到result 中
 			fileName := filepath.Base(temp)
-			dir := filepath.Dir(temp)
 
-			dest := dir + "/result/" + fileName
+			dest := resultDir + "/" + fileName
 			_ = file.MoveFile(temp,dest)
 
 		}
@@ -324,7 +346,7 @@ func deal(f string, con *common.Config)string  {
 		txtPath := dir + "/" + preFile + ".txt"
 
 		if file.PathExist(txtPath) {
-			dest := dir + "/result/"  + preFile + ".txt"
+			dest := resultDir + "/"  + preFile + ".txt"
 			_ = file.MoveFile(txtPath,dest)
 		}
 	}

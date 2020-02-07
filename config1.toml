@@ -13,6 +13,11 @@
 videoPath = "./video"
 system = 0
 
+# 空闲时间每隔几分钟检测 video 是否有视频，若有则处理,处理完成后将文件移到 output
+# 此项功能是配合自动发布器使用
+task = 0
+output = ""
+
 # 密钥
 appId = ""
 
@@ -90,8 +95,15 @@ appId = ""
     top = 40
     bottom = 40
 
-## 7. 去除水印
+## 7. 去除水印 ，可以设置两个位置
 [clearWater]
+    switch = false
+    x = 10
+    y = 10
+    w = 100
+    h = 50
+
+[clearWater1]
     switch = false
     x = 10
     y = 10
