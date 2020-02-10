@@ -34,6 +34,7 @@ type Config struct {
 	WaterText WaterText
 	RunWaterText RunWaterText `toml:"RunWaterText"`
 	WaterImage WaterImage
+	AddBgm AddBgm `json:"addBgm"`
 	Speed Speed
 	FilmTitle FilmTitle
 	FilmEnd FilmEnd
@@ -153,6 +154,12 @@ type WaterImage struct {
 	Style int
 	Sp1 int
 	Sp2 int
+}
+
+type AddBgm struct {
+	Switch int
+	Cover int
+	Bgm string
 }
 
 type Speed struct {

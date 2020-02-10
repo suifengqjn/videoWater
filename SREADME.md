@@ -32,6 +32,10 @@
 
 [14. 使用剪裁方式批量去水印](https://www.bilibili.com/video/av86108022)
 
+[15. 添加滚动文字水印]()
+
+[16. 添加随机背景音乐]()
+
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av84094229/)
 
 

@@ -4,9 +4,18 @@
 #                                                                       #
 # **********************************************************************#
 
-# x,y, w,h 代表 坐标和宽高
-# 注意：每一项操作都在前一项操作的结果上进行
-# 功能开关： 1 打开   0 关闭
+# **********************************************************************#
+#                         注意事项
+#  1. windows 系统，此文件不能用记事本打开修改
+#  2. 支持的视频格式 "mp4","avi","flv","webm","mpeg","divx","mov","asf","wmf","rm","rmvb","ts"
+#  3. 支持的音频格式 "mp3","wav","midi","wma","ogg","ape"
+#  4. x,y, w,h 代表 坐标和宽高
+#  5. 每一项操作都在前一项操作的结果上进行，可同时打开多项功能
+#  6. 功能开关： 1 打开   0 关闭
+#
+# **********************************************************************#
+
+
 
 # 视频路径
 videoPath = "video"
@@ -16,12 +25,12 @@ system = 0
 
 # 空闲时间每隔几分钟检测 video 是否有视频，若有则处理,处理完成后将文件移到 output
 # 此项功能是配合自动发布器使用
-task = 3
+task = 0
 output = "/Users/qianjianeng/Desktop/media/vp_mac/pub_videos"
 
 
 # 密钥
-appId = "86b026d19f6940aa6a58a966346e1abf"
+appId = ""
 
 ############################# 独立模块 ################################
 # 视频分段
@@ -40,9 +49,13 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
     r = 1
 ############################# 独立模块 ################################
 
+
+
+
 ###################### 下面为视频剪辑相关操作 ##########################
 
 ## 1. 视频格式转换
+## form 输出格式
 [format]
     switch = 0
     form = "mp4"
@@ -74,7 +87,6 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 # 如果全部剪裁 start duration 填0
 # start = 5 duration = 10 含义 从第5秒开始，剪裁往后的10秒
 # 通过坐标及区域剪裁
-
 [crop]
     switch = 0
     start = 0  #从第几秒开始剪裁 （可选）
@@ -128,13 +140,20 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
     h = 1024
 
 ## 10. 压缩,一般 调整 crf 即可
-
 [compress]
     switch = 0
     preset = "medium" #（ultrafast，superfast，veryfast，faster，fast，medium，slow，slower，veryslow和placebo）
     crf = 40 # 指定输出视频的质量，取值范围是0-51，默认值为23，数字越小输出视频的质量越高
 
 ## 11. 文字水印
+# content 文字内容
+# path 字体路径，对字体没有要求不要更改
+# size 字体大小
+# color 字体颜色，eg: red black white blue yellow ...
+# alapha 字体透明度（0~1.0）
+# style 字体位置（1~9）
+# sp1 水平方向距离边界的距离
+# sp2 竖直方向距离边界的距离
 [waterText]
     switch = 0
     content = "微信 cywt123"
@@ -148,7 +167,8 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 
 ## 11.1 滚动文字
 # isTop 顶部还是底部 sp 距离顶部或者底部的距离
-# leftToRight 是否从坐到右
+# leftToRight 是否从左到右移动 1 从左到右 0 从右到左
+# 其他参数同上
 [runWaterText]
     switch = 0
     content = "微信 cywt123"
@@ -161,6 +181,11 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 
 
 ## 12. 图片水印
+# content 文字内容
+# path 图片路径，将图片放入source 文件夹，然后修改path
+# style 字体位置（1~9）
+# sp1 水平方向距离边界的距离
+# sp2 竖直方向距离边界的距离
 [waterImage]
     switch = 0
     path = "./source/item.png"
@@ -168,17 +193,28 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
     sp1 = 50
     sp2 = 100
 
-# 13. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
+## 13. 添加背景音乐
+# 将背景音乐放入bgm 文件夹，可以放多个背景音乐，随机给视频添加背景音乐，如果音乐比视频短，则音乐会循环播放
+# cover 是否覆盖 0:保留原有音频，同时添加新的背景音乐  1: 去除原有音频，添加新背景音乐
+[addBgm]
+    switch = 0
+    cover = 1
+    bgm = "./bgm"
+
+
+## 14. 倍速播放（取值范围 0.5~2）0.5 速度减慢一倍，2 速度加快一倍，1 速度不变
 [speed]
     switch = 0
     v = "2"
 
-## 14. 片头
+## 15. 片头
+# path 片头路径
 [filmTitle]
     switch = 0
     path = "./source/head.mp4"
 
-## 15. 片尾
+## 16. 片尾
+# path 片尾路径
 [filmEnd]
     switch = 0
     path = "./source/foot.mp4"

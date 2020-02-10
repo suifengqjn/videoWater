@@ -63,7 +63,7 @@ func Run()  {
 		fmt.Println(formatline("密钥无效，请购买密钥"))
 		fmt.Println(formatline("密钥购买地址："+"https://www.kuaifaka.com/purchasing?link=3ZUpQ"))
 	} else {
-		fmt.Println(formatline(fmt.Sprintf("账户 密钥：%v",acc.AppId)))
+		fmt.Println(formatline(fmt.Sprintf("账户 密钥：%v",acc.AppId[:10] + strings.Repeat("*",16))))
 		fmt.Println(formatline(fmt.Sprintf("账户类型：%v",acc.TYPE())))
 		fmt.Println(formatline(fmt.Sprintf("%v",acc.Time)))
 		fmt.Println(formatline(acc.Msg))

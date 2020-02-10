@@ -1,8 +1,10 @@
 # 批量伪原创视频剪辑器
 
+## 使用教程
+
 [快速入门视频教程](https://www.bilibili.com/video/av84085197/)
 
-[针对小白超级详细的视频教程及文档说明](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
+[针对小白超级详细的视频教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
 
 ## 其他相关软件
 
@@ -19,10 +21,6 @@
 
 * 配置文件不要用记事本直接打开，请用sublime Text 打开修改 
 * 配置文件中的引号(") 逗号(,) 都是英文输入法 
-
-## sublime Text 下载
-
-链接:https://pan.baidu.com/s/1b7NM83ii66IaeibfXlNATQ  密码:wfys
 
 
 ## 功能介绍
@@ -51,27 +49,21 @@
 * [x] [添加文字水印] 
 * [x] [添加跑马灯文字水印] 
 * [x] [添加图片水印]
+* [x] [添加随机背景音乐]
 * [x] [倍速播放(加速减速)]
 * [x] [添加片头] 
 * [x] [添加片尾] 
 
 * TODO
-* [ ] [1. 去掉视频原有的配音] 
-* [ ] [2. 添加自己的配音] 
-* [ ] [3. 添加字幕]
-* [ ] [4. 随机添加背景音乐]
-* [ ] [5. 多镜头合并]
-* [ ] [6. 多种滤镜]
+* [ ] [1. 添加自己的配音] 
+* [ ] [2. 添加字幕]
+* [ ] [3. 多镜头合并]
+* [ ] [4. 多种滤镜]
 
 
-## 软件收费说明
+## 密钥购买
 
-* 基础套餐：1元，有效期一个月，每天20个视频
-* 月卡套餐: 15元，有效期一个月，每天200个视频
-* 半年卡套餐: 100元，有效期180天，每天1000个视频
-* 年卡套餐: 180元，有效期360天，无限制
-
-可以先买基础套餐试用效果
+建议先买基础套餐试用效果
 
 密钥购买地址：[https://www.kuaifaka.com/purchasing?link=3ZUpQ](https://www.kuaifaka.com/purchasing?link=3ZUpQ)
 
@@ -79,6 +71,15 @@
 
 支持 mac win32 win64 系统
 链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
+
+## sublime Text 下载
+
+进入sublime官网 [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
+
+![](https://github.com/suifengqjn/videoWater/blob/master/image/r_5.png)
+
+选择对应系统下载软件，然后安装即可
+
 
 ## 程序使用
 
@@ -176,11 +177,17 @@ windows `./vm.exe -f config1.toml`
 * 视频镜像
 * 视频分段
 * 视频截图
+
 #### 2.1
 * 新增一种视频剪裁方式
 * 可设置两个水印位置
 * 调整结果输出
 * 添加定时任务(主要是用于配合自动发布)
+
+#### 2.2
+* 支持添加随机背景音乐
+* 修复滚动文字水印问题
+
 ## 其他说明
 
 我们的目标是软件一开，实现睡后收入

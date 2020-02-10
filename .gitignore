@@ -16,3 +16,4 @@ video
 build
 log
 *.ts
+config.toml

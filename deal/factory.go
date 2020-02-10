@@ -294,6 +294,11 @@ func deal(f ,resultDir string, con *common.Config)string  {
 		)
 	}
 
+	// 添加背景音乐
+	if con.AddBgm.Switch == 1 {
+		f = addBgm(con.AddBgm.Bgm,f, con.AddBgm.Cover == 1)
+	}
+
 	//10. speed
 	if con.Speed.Switch == 1 {
 		v,err := strconv.ParseFloat(con.Speed.V, 10)

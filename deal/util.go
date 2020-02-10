@@ -2,6 +2,8 @@ package deal
 
 import (
 	"fmt"
+	"myTool/ffmpeg"
+	"myTool/file"
 	"myTool/sys"
 	"os"
 	"strconv"
@@ -68,4 +70,21 @@ func createResultDir(videoDir string) string {
 	_ = os.MkdirAll(result, os.ModePerm)
 
 	return result
+}
+
+func GetAllBgm(dir string) []string  {
+	files , err := file.GetAllFiles(dir)
+	if err != nil {
+		return nil
+	}
+	var res []string
+
+	for _, f := range  files {
+		v := ffmpeg.IsMusic(f)
+		if v {
+			res = append(res, f)
+		}
+
+	}
+	return res
 }
