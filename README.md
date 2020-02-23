@@ -53,9 +53,13 @@
 ## 打包程序下载
 
 支持 mac win32 win64 系统
-链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
 选择对应系统下载，然后解压即可
 
+### 2.0
+链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
+
+### 3.0
+链接:https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA  密码:2e3s
 
 ## 程序使用
 
