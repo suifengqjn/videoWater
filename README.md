@@ -4,7 +4,7 @@
 
 [2.0版视频教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
 
-[3.0版视频教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME_3.md)
+[3.0版视频教程](https://github.com/suifengqjn/videoWater/blob/master/README_3.md)
 
 
 ## 界面展示
