@@ -23,6 +23,7 @@ func DoMerge(con *common.Config) int  {
 		return 0
 	}
 
+	fmt.Println("进行视频合成处理")
 	// 先处理当前的文件
 	count := 0
 	if len(files) >= con.MergeSection.Count {
@@ -30,7 +31,7 @@ func DoMerge(con *common.Config) int  {
 		MergeRandom(files, con.MergeSection.Count)
 	}
 
-	fmt.Println("进行视频合成处理")
+
 	// 处理文件夹
 	for _, d := range dirs {
 

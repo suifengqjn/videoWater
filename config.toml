@@ -45,7 +45,7 @@ appId = "86b026d19f6940aa6a58a966346e1abf"
 [mergeSection]
     switch = 1
     MergePath = "./merge"
-    count = 6
+    count = 5
 
 # 视频截图
 #  t 表示共要多少时间
