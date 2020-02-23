@@ -50,18 +50,11 @@
 * [ ] [4. 多种滤镜]
 * [ ] [4. 画中画]
 
-## 密钥购买
-
-建议先买基础套餐试用效果
-
-密钥购买地址：[https://www.kuaifaka.com/purchasing?link=3ZUpQ](https://www.kuaifaka.com/purchasing?link=3ZUpQ)
-
 ## 打包程序下载
 
 支持 mac win32 win64 系统
 链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
 选择对应系统下载，然后解压即可
-
 
 
 ## 程序使用
@@ -148,11 +141,16 @@ cd 进入到软件所在文件夹
 <img src="https://github.com/suifengqjn/videoWater/blob/master/image/style5.jpg?raw=true" width="120" height="212" alt="style 5"/>
 
 
+## 密钥购买
+
+建议先买基础套餐试用效果
+
+密钥购买地址：[https://www.kuaifaka.com/purchasing?link=3ZUpQ](https://www.kuaifaka.com/purchasing?link=3ZUpQ)
 
 ## 其他说明
 
 我们的目标是软件一开，实现睡后收入
-有任何问题 微信资讯
+有任何问题 微信咨询
 
 ![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpeg?raw=true)
 
