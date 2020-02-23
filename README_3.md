@@ -4,7 +4,7 @@
 
 视频介绍了每种功能的参数改如何配置，及软件整体是如何使用
 
-[1. 下载安装使用及简单演示(必看)](https://www.bilibili.com/video/av84085197/)
+[1. 下载安装(必看)](https://www.bilibili.com/video/av84085197/)
 
 [2. 视频格式转换](https://www.bilibili.com/video/av84090158/)
 
@@ -16,7 +16,7 @@
 
 [6. 视频去水印](https://www.bilibili.com/video/av84093352/)
 
-[7. 视频镜像制作](https://www.bilibili.com/video/av84093482/)
+[7. 视频旋转和视频镜像](https://www.bilibili.com/video/av84093482/)
 
 [8. 修改视频分辨率](https://www.bilibili.com/video/av84093628/)
 
@@ -28,9 +28,7 @@
 
 [12. 添加片头和片尾](https://www.bilibili.com/video/av84094016/)
 
-[13. 伪原创参数配置推荐](https://www.bilibili.com/video/av84094116/)
-
-[14. 使用剪裁方式批量去水印](https://www.bilibili.com/video/av86108022)
+[13. 使用剪裁方式批量去水印](https://www.bilibili.com/video/av86108022)
 
 [15. 添加滚动文字水印]()
 
