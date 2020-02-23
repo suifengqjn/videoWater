@@ -18,7 +18,7 @@
 
 
 # 视频路径
-videoPath = "video"
+videoPath = "./video"
 
 # 如果程序无法识别系统 手动填写 MacOS  =1 Linux = 2 Win32 = 3 Win64 = 4
 system = 0
@@ -26,19 +26,26 @@ system = 0
 # 空闲时间每隔几分钟检测 video 是否有视频，若有则处理,处理完成后将文件移到 output
 # 此项功能是配合自动发布器使用
 task = 0
-output = "/Users/qianjianeng/Desktop/media/vp_mac/pub_videos"
+output = ""
 
 
 # 密钥
-appId = ""
+appId = "86b026d19f6940aa6a58a966346e1abf"
 
 ############################# 独立模块 ################################
 # 视频分段
 # duration 每一段的时长（单位：秒）
 [cutSection]
-    sectionPath = "./section"
     switch = 0
+    sectionPath = "./section"
     duration = 10
+
+# 随机合并
+# 随机选择几个合并
+[mergeSection]
+    switch = 1
+    MergePath = "./merge"
+    count = 6
 
 # 视频截图
 #  t 表示共要多少时间

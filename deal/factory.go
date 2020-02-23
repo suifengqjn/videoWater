@@ -22,9 +22,13 @@ func DoFactory(con *common.Config)  {
 
 	c1 := DoSection(con)
 
-	c2 := doEdit(con)
+	c2 := DoMerge(con)
 
-	t := c1 + c2
+	c3 := doEdit(con)
+
+
+
+	t := c1 + c2 + c3
 	if t == 0 {
 		fmt.Println("没有视频需要处理")
 	} else {
@@ -205,7 +209,11 @@ func deal(f ,resultDir string, con *common.Config)string  {
 
 	// 6. crop
 	if con.Crop.Switch == 1 {
-		f = ffmpeg.CropVideo(fCmd,f,con.Crop.Start,con.Crop.Duration,con.Crop.X,con.Crop.Y,con.Crop.W,con.Crop.H)
+		info, err := ffmpeg.GetVideoInfo(fCmd, f)
+		if err != nil {
+			return f
+		}
+		f = info.CropVideo(fCmd,f,con.Crop.Start,con.Crop.Duration,con.Crop.X,con.Crop.Y,con.Crop.W,con.Crop.H)
 	} else if con.Crop1.Switch == 1 {
 		info, err := ffmpeg.GetVideoInfo(fCmd, f)
 		if err != nil {
@@ -219,11 +227,19 @@ func deal(f ,resultDir string, con *common.Config)string  {
 
 	// 7. clear water
 	if con.ClearWater.Switch == 1 {
-		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)
+		info, err := ffmpeg.GetVideoInfo(fCmd, f)
+		if err != nil {
+			return f
+		}
+		f = info.ClearWater(fCmd,f,con.ClearWater.X,con.ClearWater.Y,con.ClearWater.W,con.ClearWater.H)
 	}
 
 	if con.ClearWater1.Switch == 1 {
-		f = ffmpeg.ClearWater(fCmd,f,con.ClearWater1.X,con.ClearWater1.Y,con.ClearWater1.W,con.ClearWater1.H)
+		info, err := ffmpeg.GetVideoInfo(fCmd, f)
+		if err != nil {
+			return f
+		}
+		f = info.ClearWater(fCmd,f,con.ClearWater1.X,con.ClearWater1.Y,con.ClearWater1.W,con.ClearWater1.H)
 	}
 
 	//  mirror

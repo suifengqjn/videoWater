@@ -27,7 +27,6 @@ func Run()  {
 		time.Sleep(time.Second * 5)
 		return
 	}
-
 	// check version
 	code, msg := account.CheckVersion()
 	if code != 1 {

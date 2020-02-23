@@ -15,5 +15,8 @@
 video
 build
 log
+bgm
+merge
+source
 *.ts
 config.toml

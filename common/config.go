@@ -18,6 +18,7 @@ type Config struct {
 	Output string `toml:"output"`
 	AppId string `toml:"appId"`
 	CutSection CutSection
+	MergeSection MergeSection
 	Snip Snip
 	Format Format
 	FrameRate FrameRate
@@ -43,11 +44,15 @@ type Config struct {
 
 
 type CutSection struct {
-	SectionPath string `toml:"sectionPath"`
 	Switch int
+	SectionPath string `toml:"sectionPath"`
 	Duration int
 }
-
+type MergeSection struct {
+	Switch int
+	MergePath string `toml:"MergePath"`
+	Count int
+}
 
 type Snip struct {
 	Switch int

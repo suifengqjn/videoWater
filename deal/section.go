@@ -20,6 +20,7 @@ func DoSection(con *common.Config) int  {
 	}
 
 	count := 0
+	fmt.Println("进行视频分段处理")
 	for _, f := range files {
 
 		if ffmpeg.IsVideo(f) == false {
