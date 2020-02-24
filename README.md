@@ -45,10 +45,10 @@
 
 * TODO
 * [ ] [1. 通过文字添加字幕和配音] 
-* [ ] [2. 添加字幕]
-* [ ] [3. 多镜头合并]
-* [ ] [4. 多种滤镜]
+* [ ] [2. 视频合成]
+* [ ] [3. 多种滤镜]
 * [ ] [4. 画中画]
+* [ ] [5. 转场特效]
 
 ## 打包程序下载
 
@@ -59,7 +59,15 @@
 链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
 
 ### 3.0
-链接:https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA  密码:2e3s
+
+百度云
+
+[https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA](https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA)密码:2e3s
+
+
+蓝奏云
+
+[https://www.lanzous.com/b00z97xch](https://www.lanzous.com/b00z97xch)  密码:49q5
 
 ## 程序使用
 
@@ -123,35 +131,10 @@ cd 进入到软件所在文件夹
 * 修复若干bug
 * 增加视频旋转
 
-## 水印样式说明
-
-下面是5种样式的效果
-
-文字水印样式和图片水印样式一直
-
-#### style 1
-<img src="https://github.com/suifengqjn/videoWater/blob/master/image/style1.jpg?raw=true" width="120" height="212" alt="style 1"/>
-
-#### style 2
-<img src="https://github.com/suifengqjn/videoWater/blob/master/image/style2.jpg?raw=true" width="120" height="212" alt="style 2"/>
-
-#### style 3
-<img src="https://github.com/suifengqjn/videoWater/blob/master/image/style3.jpg?raw=true" width="120" height="212" alt="style 3"/>
-
-#### style 4
-<img src="https://github.com/suifengqjn/videoWater/blob/master/image/style4.jpg?raw=true" width="120" height="212" alt="style 4"/>
-
-#### style 5
-<img src="https://github.com/suifengqjn/videoWater/blob/master/image/style5.jpg?raw=true" width="120" height="212" alt="style 5"/>
-
-
-## 密钥购买
-
-建议先买基础套餐试用效果
-
-密钥购买地址：[https://www.kuaifaka.com/purchasing?link=3ZUpQ](https://www.kuaifaka.com/purchasing?link=3ZUpQ)
 
 ## 其他说明
+
+关注微信公众号(golang实战应用)，不定期分享激活码
 
 我们的目标是软件一开，实现睡后收入
 有任何问题 微信咨询
