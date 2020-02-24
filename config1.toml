@@ -40,6 +40,13 @@ appId = ""
     switch = 0
     duration = 10
 
+# 随机合并
+# 随机选择几个合并
+[mergeSection]
+    switch = 1
+    MergePath = "./merge"
+    count = 5
+
 # 视频截图
 #  t 表示共要多少时间
 #  r 表示每一秒几帧

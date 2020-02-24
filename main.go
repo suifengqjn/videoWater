@@ -29,6 +29,7 @@ func Run()  {
 	}
 	// check version
 	code, msg := account.CheckVersion()
+	fmt.Println("code", code,"msg", msg)
 	if code != 1 {
 		if len(msg) > 0 {
 			fmt.Println(msg)
