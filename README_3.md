@@ -1,39 +1,39 @@
 
 ## 视频演示
 
-视频介绍了每种功能的参数改如何配置，及软件整体是如何使用
+视频详细介绍了每种功能的参数改如何填写
 
-[1. 下载安装及激活(必看)]()
+[1. 下载安装及激活使用(必看)](https://www.bilibili.com/video/av91372302/)
 
-[2. 视频格式转换]()
+[1.1 关于视频输出路径(重要)](https://www.bilibili.com/video/av91374818/)
 
-[3. 改变视频帧率和码率]()
+[2. 视频格式转换](https://www.bilibili.com/video/av91376739/)
 
-[4. 去除视频片头和片尾]()
+[3. 改变视频帧率和码率](https://www.bilibili.com/video/av91379044/)
 
-[5. 视频剪裁]()
+[4. 去除视频片头和片尾](https://www.bilibili.com/video/av91380945/)
 
-[6. 视频去水印]()
+[5. 视频剪裁](https://www.bilibili.com/video/av91384355/)
 
-[7. 视频旋转和视频镜像]()
+[6. 视频去水印](https://www.bilibili.com/video/av91387626/)
 
-[8. 修改视频分辨率]()
+[7. 视频旋转和视频镜像](https://www.bilibili.com/video/av91389309/)
 
-[9. 视频压缩]()
+[8. 修改视频分辨率](https://www.bilibili.com/video/av91396722/)
 
-[10. 文字水印和图片水印]()
+[9. 视频压缩](https://www.bilibili.com/video/av91402679/)
 
-[11. 倍速播放]()
+[10. 文字水印和滚动文字](https://www.bilibili.com/video/av91410086/)
 
-[12. 添加片头和片尾]()
+[11. 图片水印](https://www.bilibili.com/video/av91412931/)
 
-[13. 使用剪裁方式批量去水印]()
+[12. 倍速播放](https://www.bilibili.com/video/av91414537/)
 
-[15. 添加滚动文字水印]()
+[13. 添加随机背景音乐](https://www.bilibili.com/video/av91417063/)
 
-[16. 添加随机背景音乐]()
+[14. 添加片头和片尾](https://www.bilibili.com/video/av91418007/)
 
-[20. 独立功能：视频分段]()
+[20. 独立功能：视频分段](https://www.bilibili.com/video/av91418817/)
 
 
 
