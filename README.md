@@ -42,13 +42,13 @@
 * [x] [倍速播放(加速减速)]
 * [x] [添加片头] 
 * [x] [添加片尾] 
+* [x] [2. 视频合成]
 
 * TODO
 * [ ] [1. 通过文字添加字幕和配音] 
-* [ ] [2. 视频合成]
-* [ ] [3. 多种滤镜]
-* [ ] [4. 画中画]
-* [ ] [5. 转场特效]
+* [ ] [2. 多种滤镜]
+* [ ] [3. 画中画]
+* [ ] [4. 转场特效]
 
 ## 打包程序下载
 
@@ -62,13 +62,15 @@
 
 百度云
 
-[https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA](https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA)密码:2e3s
+[https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA](https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA)
+密码:2e3s
 
 
 蓝奏云
 
-[https://www.lanzous.com/b00z97xch](https://www.lanzous.com/b00z97xch)  密码:49q5
+[https://www.lanzous.com/b00z97xaf](https://www.lanzous.com/b00z97xaf)
 
+密码:5jxv
 ## 程序使用
 
 #### windows 系统
@@ -130,6 +132,10 @@ cd 进入到软件所在文件夹
 * 增加UI界面
 * 修复若干bug
 * 增加视频旋转
+
+#### 3.1 
+* 增加视频合成
+* 修复连续点击开始处理出现的问题
 
 
 ## 其他说明
