@@ -2,9 +2,7 @@
 
 ## 使用教程
 
-[2.0版视频教程](https://github.com/suifengqjn/videoWater/blob/master/SREADME.md)
-
-[3.0版视频教程](https://github.com/suifengqjn/videoWater/blob/master/README_3.md)
+[视频教程](https://github.com/suifengqjn/videoWater/blob/master/README_3.md)
 
 
 ## 界面展示
@@ -55,8 +53,6 @@
 支持 mac win32 win64 系统
 选择对应系统下载，然后解压即可
 
-### 2v
-链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
 
 ### 3v
 
@@ -64,7 +60,6 @@
 
 [https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA](https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA)
 密码:2e3s
-
 
 蓝奏云
 
