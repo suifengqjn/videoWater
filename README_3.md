@@ -35,6 +35,8 @@
 
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av91418817/)
 
+[21. 独立功能：视频合成](https://www.bilibili.com/video/av91620976/)
+
 
 
 ## 软件目录

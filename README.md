@@ -55,10 +55,10 @@
 支持 mac win32 win64 系统
 选择对应系统下载，然后解压即可
 
-### 2.0
+### 2v
 链接: https://pan.baidu.com/s/1B2J-ggsmkhW_cLo604VKbA  密码:a8f7
 
-### 3.0
+### 3v
 
 百度云
 
@@ -68,9 +68,12 @@
 
 蓝奏云
 
-[https://www.lanzous.com/b00z97xaf](https://www.lanzous.com/b00z97xaf)
+* 3.0
+[https://www.lanzous.com/b00z97xch](https://www.lanzous.com/b00z97xch)  密码:49q5
 
-密码:5jxv
+* 3.1
+[https://www.lanzous.com/b00z9dj1i](https://www.lanzous.com/b00z9dj1i)  密码:2aj2
+
 ## 程序使用
 
 #### windows 系统
