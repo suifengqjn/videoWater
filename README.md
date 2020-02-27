@@ -36,6 +36,7 @@
 * [x] [添加文字水印] 
 * [x] [添加跑马灯文字水印] 
 * [x] [添加图片水印]
+* [x] [画中画]
 * [x] [添加随机背景音乐]
 * [x] [倍速播放(加速减速)]
 * [x] [添加片头] 
@@ -45,29 +46,19 @@
 * TODO
 * [ ] [1. 通过文字添加字幕和配音] 
 * [ ] [2. 多种滤镜]
-* [ ] [3. 画中画]
-* [ ] [4. 转场特效]
+* [ ] [3. 转场特效]
+* [ ] [4. 自动生成电影混剪]
 
 ## 打包程序下载
 
 支持 mac win32 win64 系统
 选择对应系统下载，然后解压即可
 
-
-### 3v
-
 百度云
 
 [https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA](https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA)
 密码:2e3s
 
-蓝奏云
-
-* 3.0
-[https://www.lanzous.com/b00z97xch](https://www.lanzous.com/b00z97xch)  密码:49q5
-
-* 3.1
-[https://www.lanzous.com/b00z9dj1i](https://www.lanzous.com/b00z9dj1i)  密码:2aj2
 
 ## 程序使用
 
@@ -78,6 +69,11 @@
 
 cd 进入到软件所在文件夹
 执行 ./vm 
+
+
+## 常见问题
+
+![常见问题](https://github.com/suifengqjn/videoWater/blob/master/QREADME.md)
 
 ## 版本更新记录
 
@@ -140,6 +136,10 @@ cd 进入到软件所在文件夹
 * 修复部分电脑显示网络错误的问题
 * 修复背景音乐保留问题
 * 完善合成随机模式
+
+#### 3.3 
+* 增加画中画功能
+* 修复重置参数时部分UI没有重置的问题
 
 ## 其他说明
 
