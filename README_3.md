@@ -33,6 +33,8 @@
 
 [14. 添加片头和片尾](https://www.bilibili.com/video/av91418007/)
 
+[15. 画中画](https://www.bilibili.com/video/av92178056/)
+
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av91418817/)
 
 [21. 独立功能：视频合成](https://www.bilibili.com/video/av91620976/)
