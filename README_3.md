@@ -52,5 +52,6 @@
 
 #### mac 系统
 
+[视频演示](https://www.bilibili.com/video/av92884352/)
 cd 进入到软件所在文件夹
 执行 ./vm 
