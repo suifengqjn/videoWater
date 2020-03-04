@@ -61,10 +61,6 @@
 密码:2e3s
 
 
-## 问题总览
-
-[点击查看](https://github.com/suifengqjn/videoWater/blob/master/QREADME.md)
-
 ## 程序使用
 
 #### windows 系统
@@ -78,7 +74,7 @@ cd 进入到软件所在文件夹
 
 ## 常见问题
 
-![常见问题](https://github.com/suifengqjn/videoWater/blob/master/QREADME.md)
+[常见问题](https://github.com/suifengqjn/videoWater/blob/master/QREADME.md)
 
 ## 版本更新记录
 
