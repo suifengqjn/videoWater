@@ -17,3 +17,8 @@
 
 #### 3. 添加片头之后没有声音
 * 检查片头是否有音轨，如果用样片中的片头没问题，那么可能是你的片头存在问题
+
+
+#### 去水印的坐标怎么填
+
+![](https://github.com/suifengqjn/videoWater/blob/master/image/water.png?raw=true)
