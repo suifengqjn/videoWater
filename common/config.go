@@ -44,7 +44,7 @@ type Config struct {
 
 
 type CutSection struct {
-	Switch int
+	Switch bool
 	SectionPath string `toml:"sectionPath"`
 	Duration int
 }

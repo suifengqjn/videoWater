@@ -74,7 +74,7 @@ cd 进入到软件所在文件夹
 
 ## 常见问题
 
-![常见问题](https://github.com/suifengqjn/videoWater/blob/master/QREADME.md)
+[常见问题](https://github.com/suifengqjn/videoWater/blob/master/QREADME.md)
 
 ## 版本更新记录
 
@@ -144,6 +144,11 @@ cd 进入到软件所在文件夹
 
 #### 3.4
 * 增加多线程，大大提高视频处理速度
+
+#### 3.5
+* 对一些参数进行检查，如果错误，给出提示
+* 视频支持多次合成
+* 支持自定义分段
 
 ## 其他说明
 

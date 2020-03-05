@@ -10,7 +10,7 @@ import (
 )
 
 func DoSection(con *common.Config) int  {
-	if con.CutSection.Switch == 0 {
+	if con.CutSection.Switch == false {
 		return 0
 	}
 
