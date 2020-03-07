@@ -1,7 +1,7 @@
 
 ## 视频演示
 
-视频详细介绍了每种功能的参数改如何填写
+视频详细介绍了每种功能的使用方法，所有功能可任意组合操作
 
 [1. 下载安装及激活使用(必看)](https://www.bilibili.com/video/av91372302/)
 
@@ -38,6 +38,10 @@
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av91418817/)
 
 [21. 独立功能：视频合成](https://www.bilibili.com/video/av91620976/)
+
+[22. 视频有序合成](https://www.bilibili.com/video/av94297403/)
+
+[23. 一分钟种生成上百个影视混剪](https://www.bilibili.com/video/av94292409/)
 
 
 
