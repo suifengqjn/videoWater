@@ -1,5 +1,7 @@
 # 批量伪原创视频剪辑器
 
+如果记不住本网址：只需记住 [freetop.ren](freetop.ren)
+
 ## 使用教程
 
 [视频教程](https://github.com/suifengqjn/videoWater/blob/master/README_3.md)
@@ -91,6 +93,16 @@ cd 进入到软件所在文件夹
 * 添加片头
 * 添加片尾
 
+## 关注公众号
+
+* 公众号不定期分享密钥
+* 实时推送软件更新
+* 自媒体各种软件资料
+* 分享免费软件
+* 分享编程技术
+![](https://github.com/suifengqjn/demoimages/blob/master/other/block.jpg?raw=true)
+
+
 #### 1.1
 修复去除水印边界问题
 
@@ -149,6 +161,11 @@ cd 进入到软件所在文件夹
 * 对一些参数进行检查，如果错误，给出提示
 * 视频支持多次合成
 * 支持自定义分段
+
+#### 3.6 
+* 支持插入背景颜色
+* 支持插入背景图片
+* 可以横竖屏任意切换
 
 ## 其他说明
 
