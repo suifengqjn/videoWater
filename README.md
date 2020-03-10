@@ -1,6 +1,6 @@
 # 批量伪原创视频剪辑器
 
-如果记不住本网址：只需记住 [freetop.ren](freetop.ren)
+如果记不住本网址：只需记住 [freetop.ren](http://freetop.ren)
 
 ## 使用教程
 
