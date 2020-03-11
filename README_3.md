@@ -43,6 +43,8 @@
 
 [23. 一分钟种生成上百个影视混剪](https://www.bilibili.com/video/av94292409/)
 
+** 24 底部插入颜色或图片** [视频](https://www.bilibili.com/video/av95554050/)  [文档](https://zhuanlan.zhihu.com/p/112553216)
+
 
 
 ## 软件目录
