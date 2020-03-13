@@ -2,6 +2,9 @@
 
 如果记不住本网址：只需记住 [freetop.ren](http://freetop.ren)
 
+> 软件支持定制，如果你想要实现一些本软件没有的功能，可以加我微信定制。
+
+
 ## 使用教程
 
 [视频教程](https://github.com/suifengqjn/videoWater/blob/master/README_3.md)
@@ -52,7 +55,7 @@
 * [ ] [2. 多种滤镜]
 * [ ] [3. 转场特效]
 
-## 打包程序下载
+## 软件下载
 
 支持 mac win32 win64 系统
 选择对应系统下载，然后解压即可
