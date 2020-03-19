@@ -59,5 +59,16 @@
 #### mac 系统
 
 [视频演示](https://www.bilibili.com/video/av92884352/)
+
 cd 进入到软件所在文件夹
 执行 ./vm 
+
+举例：
+把mac.zip 下载放在桌面解压后
+打开终端，输入下面命令回车即可打开
+`cd ~/Desktop/build/mac && ./vm`
+
+
+如果把build 内的mac 文件夹放到桌面, 则执行
+
+`cd ~/Desktop/mac && ./vm`

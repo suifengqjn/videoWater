@@ -62,8 +62,7 @@
 
 百度云
 
-[https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA](https://pan.baidu.com/s/194H5DwzLOWPb8zfGfLe6vA)
-密码:2e3s
+链接:[https://pan.baidu.com/s/1FXEuuhvjnhHFbidMZJrbjQ](https://pan.baidu.com/s/1FXEuuhvjnhHFbidMZJrbjQ)  密码:w3dv
 
 
 ## 程序使用
@@ -173,6 +172,13 @@ cd 进入到软件所在文件夹
 #### 3.7
 * 模糊拓边效果
 * 自定义字体
+
+#### 4.0
+* 增加邀请机制
+* 增加文件覆盖功能
+* 修复处理完文件名问题
+* 文字水印内容为空时, 支持读取文件名作为水印内容
+* result 文件夹内的视频不会进行二次处理
 
 ## 其他说明
 
