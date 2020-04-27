@@ -185,14 +185,7 @@ cd 进入到软件所在文件夹
 #### 4.2
 * 优化添加片头片尾
 
-## 其他说明
 
-关注微信公众号(golang实战应用)，不定期分享激活码
-
-我们的目标是软件一开，实现睡后收入
-有任何问题 微信咨询
-
-![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpeg?raw=true)
 
 
 
