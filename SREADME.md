@@ -36,6 +36,8 @@
 
 [16. 添加随机背景音乐]()
 
+[17. 描边文字](https://www.bilibili.com/video/BV1hk4y167sZ/)
+
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av84094229/)
 
 

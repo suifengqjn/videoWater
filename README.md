@@ -15,6 +15,16 @@
 ![](https://github.com/suifengqjn/videoWater/blob/master/image/r_8.png?raw=true)
 
 
+## 软件下载
+
+支持 mac win32 win64 系统
+选择对应系统下载，然后解压即可
+
+百度云
+
+链接:https://pan.baidu.com/s/1kq7e5mZXQ9UlwB_FNhnwpw  密码:z1a1
+
+
 ## 功能介绍
 
 视频自媒体批量视频伪原创剪辑器，秒杀市面上绝大部分收费软件。
@@ -49,27 +59,21 @@
 * [x] [视频分段] 
 * [x] [视频合成]
 * [x] [自动生成电影混剪]
-
-
-## 软件下载
-
-支持 mac win32 win64 系统
-选择对应系统下载，然后解压即可
-
-百度云
-
-链接:[https://pan.baidu.com/s/1FXEuuhvjnhHFbidMZJrbjQ](https://pan.baidu.com/s/1FXEuuhvjnhHFbidMZJrbjQ)  密码:w3dv
+* [x] [插入背景]
+* [x] [插入背景]
+* [x] [模糊拓边]
+* [x] [描边文字水印]
 
 
 ## 程序使用
 
 #### windows 系统
-双击vm.exe(vm) 即可打开
+双击editer.exe(editer) 即可打开
 
 #### mac 系统
 
 cd 进入到软件所在文件夹
-执行 ./vm 
+执行 ./editer 
 
 
 ## 常见问题
@@ -98,8 +102,7 @@ cd 进入到软件所在文件夹
 * 自媒体各种软件资料
 * 分享免费软件
 * 分享编程技术
-![](https://github.com/suifengqjn/demoimages/blob/master/other/block.jpg?raw=true)
-
+![](http://cdn.qiniu.freetop.ren/gzh.jpg)
 
 #### 1.1
 修复去除水印边界问题
@@ -184,16 +187,19 @@ cd 进入到软件所在文件夹
 
 #### 4.2
 * 优化添加片头片尾
+* 优化视频分段
+
+#### 5.0
+* 增加描边文字
+* 调整插入背景和模糊拓边的尺寸
+* 暂时去掉插入背景图片
+* 修复设备号不一致问题
 
 ## 其他说明
 
 关注微信公众号(golang实战应用)，不定期分享激活码
-
-我们的目标是软件一开，实现睡后收入
-有任何问题 微信咨询
-
-![](https://github.com/suifengqjn/videoWater/blob/master/image/wechat.jpeg?raw=true)
-
+微信咨询
+![](http://cdn.qiniu.freetop.ren/weixin.jpg)
 
 
 

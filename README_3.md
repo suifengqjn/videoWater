@@ -35,6 +35,8 @@
 
 [15. 画中画](https://www.bilibili.com/video/av92178056/)
 
+[16. 描边文字](https://www.bilibili.com/video/BV1hk4y167sZ/)
+
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av91418817/)
 
 [21. 独立功能：视频合成](https://www.bilibili.com/video/av91620976/)
@@ -43,18 +45,13 @@
 
 [23. 一分钟种生成上百个影视混剪](https://www.bilibili.com/video/av94292409/)
 
-** 24 底部插入颜色或图片** [视频](https://www.bilibili.com/video/av95554050/)  [文档](https://zhuanlan.zhihu.com/p/112553216)
+[24 底部插入颜色或图片](https://www.bilibili.com/video/av95554050/) 
 
-
-
-## 软件目录
-
-![](https://github.com/suifengqjn/videoWater/blob/master/image/r_6.png?raw=true)
 
 ## 程序使用
 
 #### windows 系统
-双击vm.exe(vm) 即可打开
+双击editer.exe(editer) 即可打开
 
 #### mac 系统
 
