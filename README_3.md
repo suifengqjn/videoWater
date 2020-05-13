@@ -35,7 +35,11 @@
 
 [15. 画中画](https://www.bilibili.com/video/av92178056/)
 
-[16. 描边文字](https://www.bilibili.com/video/BV1hk4y167sZ/)
+[16 底部插入颜色或图片](https://www.bilibili.com/video/av95554050/) 
+
+[17. 描边文字](https://www.bilibili.com/video/BV1hk4y167sZ/)
+
+
 
 [20. 独立功能：视频分段](https://www.bilibili.com/video/av91418817/)
 
@@ -45,7 +49,6 @@
 
 [23. 一分钟种生成上百个影视混剪](https://www.bilibili.com/video/av94292409/)
 
-[24 底部插入颜色或图片](https://www.bilibili.com/video/av95554050/) 
 
 
 ## 程序使用
