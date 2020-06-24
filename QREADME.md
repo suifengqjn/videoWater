@@ -84,4 +84,4 @@ Conversion failed!
 ```
 #### 5.去水印的坐标怎么填
 
-![](https://github.com/suifengqjn/videoWater/blob/master/image/water.png?raw=true)
+![](http://cdn.qiniu.freetop.ren/%E6%B0%B4%E5%8D%B0%E5%9D%90%E6%A0%87.jpg)
