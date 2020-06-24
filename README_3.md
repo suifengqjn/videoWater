@@ -15,7 +15,7 @@
 
 [5. 视频剪裁](https://www.bilibili.com/video/av91384355/)
 
-[6. 视频去水印](https://www.bilibili.com/video/av91387626/)
+[6. 视频去水印](https://www.bilibili.com/video/BV1Ha4y1Y7sb/)
 
 [7. 视频旋转和视频镜像](https://www.bilibili.com/video/av91389309/)
 
