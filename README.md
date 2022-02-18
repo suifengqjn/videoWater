@@ -24,14 +24,13 @@ AI快剪是一款全自动的视频剪辑软件，包含剪辑，合成，去重
 
 ### 软件下载
 
-百度云：链接:https://pan.baidu.com/s/1dzs24anhHEdNEyO_W_kk6A  密码:3tzg
+百度云 链接: https://pan.baidu.com/s/1Dy7F4aWymUKtMP_c0zS0fQ 提取码: x29e
 
-城通网盘：链接: https://n802.com/dir/24885990-40655136-988253
-密码: 279175
+123盘 链接:https://www.123pan.com/s/0HH9-v725v 提取码:1acU
 
-### 软件教程
+### 激活卡号
 
-[点击查看](https://gitee.com/fstongxue/fstongxue/wikis/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B?sort_id=2820748)
+videoai683ad3a06ed4f1089c72b566c
 
 
 
