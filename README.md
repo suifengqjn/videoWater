@@ -12,14 +12,20 @@ AI快剪是一款全自动的视频剪辑软件，包含剪辑，合成，去重
 
 
 界面区域
-![](http://cdn.qiniu.freetop.ren/2020-09-06-15993779647458.jpg)
+![](https://aidoc.gitee.io/soft/aicut.assets/1.jpg)
 
-配音字幕
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0911/230751_9b583ca7_1093073.png "屏幕截图.png")
+模板
 
+![](https://aidoc.gitee.io/soft/aicut.assets/image-20230512221019299.png)
+
+设计器
+![](https://aidoc.gitee.io/soft/aicut.assets/image-20230512221048322.png)
+
+配音
+![](https://aidoc.gitee.io/soft/aicut.assets/2.jpg)
 
 水印功能
-![](http://cdn.qiniu.freetop.ren/2020-09-06-15993779974758.jpg)
+![](https://aidoc.gitee.io/soft/aicut.assets/3.jpg)
 
 
 ### 软件下载
@@ -28,9 +34,6 @@ AI快剪是一款全自动的视频剪辑软件，包含剪辑，合成，去重
 
 123盘 链接:https://www.123pan.com/s/0HH9-v725v 提取码:1acU
 
-### 激活卡号
-
-videoai683ad3a06ed4f1089c72b566c
 
 
 
