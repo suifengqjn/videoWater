@@ -12,20 +12,20 @@ AI快剪是一款全自动的视频剪辑软件，包含剪辑，合成，去重
 
 
 界面区域
-![](https://aidoc.gitee.io/soft/aicut.assets/1.jpg)
+![](https://doc.51ai.top/soft/aicut.assets/1.jpg)
 
 模板
 
-![](https://aidoc.gitee.io/soft/aicut.assets/image-20230512221019299.png)
+![](https://doc.51ai.top/soft/aicut.assets/image-20230512220915242.png)
 
 设计器
-![](https://aidoc.gitee.io/soft/aicut.assets/image-20230512221048322.png)
+![](https://doc.51ai.top/soft/aicut.assets/image-20230512221048322.png)
+
+工具箱
+![](https://doc.51ai.top/soft/aicut.assets/image-20230512221116308.png)
 
 配音
-![](https://aidoc.gitee.io/soft/aicut.assets/2.jpg)
-
-水印功能
-![](https://aidoc.gitee.io/soft/aicut.assets/3.jpg)
+![](https://doc.51ai.top/soft/aicut.assets/2.jpg)
 
 
 ### 软件下载
