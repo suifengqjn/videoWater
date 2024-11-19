@@ -1,6 +1,6 @@
 # AI快剪
 
-进入官网查看更多软件 [点击进入官网](http://fstongxue.gitee.io/)
+进入官网查看更多软件 [点击进入官网](https://www.51ai.top)
 
 > 软件支持windows32 window64 和 mac 版本
 
@@ -30,9 +30,8 @@ AI快剪是一款全自动的视频剪辑软件，包含剪辑，合成，去重
 
 ### 软件下载
 
-百度云 链接: https://pan.baidu.com/s/1Dy7F4aWymUKtMP_c0zS0fQ 提取码: x29e
-
-123盘 链接:https://www.123pan.com/s/0HH9-v725v 提取码:1acU
+飞书
+https://diqicg64yaa.feishu.cn/drive/folder/MNYvf4Rfkly4JYdINoPcJRMTnJb
 
 
 
